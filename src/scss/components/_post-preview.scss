@@ -6,9 +6,26 @@
         margin-top: $size-3;
     }
 
+    &[data-type="large"] {
+        $max-width: 28.125rem;
+        max-width: $max-width;
+        
+        .post-title {
+            max-width: $max-width;
+        }
+    }
+
+    &[data-type="small"] {
+        $max-width: 18.75rem;
+        max-width: $max-width;
+
+        .post-title {
+            max-width: $max-width;
+        }
+    }
+
     .post-img-wrapper {
         border-radius: 0.625rem;
-        max-width: 28.125rem;
         overflow: hidden;
 
         .post-img {
@@ -19,14 +36,12 @@
             }
         }
     }
-
     
     .post-title {
         color: $color-neutral-800;
         font-size: $size-4;
         font-weight: 600;
         letter-spacing: -.05rem;
-        max-width: 28rem;
     }
 
     .post-tag {

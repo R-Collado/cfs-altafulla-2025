@@ -9,15 +9,16 @@ export interface PostPreviewProps {
 	image: string;
 	tag: string;
 	date: string;
+	type: string;
 }
 
-export const PostPreview = ({ title, excerpt, image, tag, date }: PostPreviewProps) => {
+export const PostPreview = ({ title, excerpt, image, tag, date, type }: PostPreviewProps) => {
 	const onPreviewClick = () => {
 		alert('preview clicked');
 	};
 
 	return (
-		<article className="post-preview | max-w-fit ">
+		<article className="post-preview | max-w-fit " data-type={type}>
 			<div className="post-img-wrapper">
 				<img className="post-img | pointer" src={image} alt="" onClick={onPreviewClick} />
 			</div>
