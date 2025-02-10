@@ -4,9 +4,11 @@ $-clr-white: hsl(0 0% 100%);
 $-clr-black: hsl(0, 0%, 0%);
 
 // grey
+$-clr-grey-100: hsl(40, 43%, 97%);
 $-clr-grey-500: hsl(0, 0%, 51%);
 $-clr-grey-600: hsl(216, 5%, 21%);
 $-clr-grey-700: hsl(210, 4%, 11%);
+$-clr-grey-800: hsl(0, 0%, 15%);
 $-clr-grey-900: hsl(0, 3%, 7%);
 
 // orange
@@ -29,23 +31,35 @@ $-clr-turquoise-700: hsl(193, 36%, 15%);
 $-clr-turquoise-800: hsl(194, 41%, 8%);
 $-clr-turquoise-900: hwb(165 6% 92%); 
 
+// yellow
+
+$-clr-yellow-400: hsl(56, 100%, 50%);
+
+// palette
+// primary -> yellow-400
+// text -> grey-800
+// background -> grey-100
+// invalid form input -> orange-400
+// valid form input -> turquoise-400
+
 $colors: (
   "neutral": (
     "100": $-clr-white,
-    "200": $-clr-turquoise-200,
+    "200": $-clr-grey-100, //background color
     "500": $-clr-grey-500,
     "600": $-clr-grey-600,
     "700": $-clr-grey-700,
-    "800": $-clr-grey-900
+    "800": $-clr-grey-800, //text color
+    "900": $-clr-black,
   ),
   "accent": (
     "300": $-clr-orange-300,
-    "400": $-clr-orange-400,
+    "400": $-clr-orange-400, // invalid form input
     "500": $-clr-orange-500,
   ),
   "primary": (
-    "400": $-clr-turquoise-400,
-    "700": $-clr-turquoise-700,
+    "400": $-clr-yellow-400,
+    "700": $-clr-turquoise-700,  // TODO: change colors if necessary
     "800": $-clr-turquoise-800,
     "900": $-clr-turquoise-900
   ),
