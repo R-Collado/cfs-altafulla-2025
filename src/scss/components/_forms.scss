@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+.user-forms {
+    padding-block: $user-forms-padding-block;
+
+    & .container {
+        justify-content: space-between;
+
+
+        @media (max-width: 450px) {
+            flex-direction: column;
+        }
+    }
+
+    & h2 {
+        font-size: $size-6;
+    }
+
+    & .register form,
+    & .login form {
+        flex-direction: column;
+
+        & input::placeholder {
+            color: $color-neutral-500;
+        }
+    }
+
+    & .button:hover {
+        color: $color-neutral-100;
+    }
+
+}

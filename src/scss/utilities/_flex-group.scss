@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+.flex-group {
+  column-gap: var(--flex-column-gap, $flex-group-gap);
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--flex-row-gap, calc($flex-group-gap / 2));
+  // width: fit-content;
+}
+
+.flex-group.mx-auto {
+  justify-content: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}

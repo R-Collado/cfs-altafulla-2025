@@ -1,0 +1,109 @@
+{
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		// "**/*.mjs",
+		"types/**/*.d.ts",
+		"types/**/*.ts",
+		"e2e",
+		".eslintrc.cjs",
+		"test/setup-test.ts"
+	],
+	// "exclude": ["node_modules"],
+	"compilerOptions": {
+		/* Absolute import */
+		"baseUrl": ".", // Specify the base directory to resolve non-relative module names.
+		"paths": {
+			"@/*": ["src/*"],
+			"@assets/*": ["src/assets/*"],
+			"@svgs/*": ["src/assets/svgs/*"],
+			"@images/*": ["src/assets/images/*"],
+			"@changelog/*": ["src/assets/changelog/*"],
+			"@contexts/*": ["src/contexts/*"],
+			"@configs/*": ["src/configs/*"],
+			"@components/*": ["src/components/*"],
+			"@features/*": ["src/features/*"],
+			"@hooks/*": ["src/hooks/*"],
+			"@models/*": ["src/models/*"],
+			"@store/*": ["src/store/*"],
+			"@pages/*": ["src/pages/*"],
+			"@scss/*": ["src/scss/*"],
+			"@services/*": ["src/services/*"],
+			"@utils/*": ["src/utils/*"],
+			"#/*": ["types/*"]
+		},
+
+		// Type declaration files to be included in compilation.
+		"types": ["vite/client", "vitest/globals", "vite-plugin-svgr/client"],
+		// "rootDirs": [], // Allow multiple folders to be treated as one when resolving modules.
+		// "typeRoots": ["./type-definitions"], // List of folders to include type definitions from. (like `./node_modules/@types`)
+
+		/* Language and Environment */
+		"target": "ES2022", // The version of JavaScript for emitted (include compatible library declarations).
+		"lib": ["ES2022", "DOM", "DOM.Iterable", "ESNext"], // Tells TS what built-in types to include (dom and dom.iterable give you types for window, document etc)
+		"jsx": "react-jsx", // Specify what JSX code is generated.
+
+		/* Modules and imports Options */
+		"moduleResolution": "Bundler", // Specify module resolution strategy (bundled is meant to be bundled with a tool like Webpack, Rollup...)
+		"module": "ESNext", // Specify what module code is generated.
+		"esModuleInterop": true, // It helps to fix some of the differences between CommonJS and ES Modules (Via creation of namespace objects for all imports.) (Recommended by TS).
+		"allowSyntheticDefaultImports": true, // Allow import * as React from 'react'
+		"allowImportingTsExtensions": true,
+		"allowJs": true, // Allow JavaScript files to be compiled, use the `checkJS` option to get errors from these files. (Recommended by TS).
+		// "checkJs": true, // Enable error reporting in type-checked JavaScript files.
+		"resolveJsonModule": true, // Allow importing .json files
+		// "verbatimModuleSyntax": true, // Gives you strict errors for import and export syntax in .cts and .mts files (Required for esbuild). //TODO ACTIVATE
+		"forceConsistentCasingInFileNames": true, // Error out if import and file system have a casing mismatch (Recommended by TS).
+		// "moduleDetection": "force", // Allow to use modules without declare file (Required for esbuild) ,
+		// "preserveSymlinks": true, // Do not resolve the real path of symlinks.
+		// "allowUmdGlobalAccess": true, // Allow accessing UMD globals from modules.
+
+		/* Compilation and transpilation */
+		"noEmit": true, // Do not emit output (Recommended by TS). ,
+		"incremental": true, // Enable incremental compilation ,
+		"useDefineForClassFields": true, // Emit ECMAScript-standard-compliant class fields. (Required for esbuild) ,
+		"isolatedModules": true, // Allow to use modules without declare file (Required for esbuild) ,
+		"removeComments": true, // Disable emitting comments (Reduce the size of the output) (Recommended by TS) ,
+		"importHelpers": true, // Allow importing helper functions from tslib once per project, instead of including them per-file (Reduce the size of the output) ,
+
+		/* Strict Type-Checking and linting options */
+		"strict": true, // Enable all strict type-checking options (Recommended by TS).
+		"noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement.
+		// "noUncheckedIndexedAccess": true, // Include 'undefined' in index signature results (Recommended by TS). // TODO ACTIVATE
+		// "alwaysStrict": true, // Parse in strict mode and emit "use strict" for each source file.
+		// "strictBindCallApply": true, // Enable strict 'bind', 'call', and 'apply' methods on functions.
+		// "strictFunctionTypes": true, // Enable strict checking of function types.
+		// "strictNullChecks": true, // Enable strict null checks.
+		// "strictPropertyInitialization": true, // Enable strict checking of property initialization in classes.
+		// "noImplicitAny": true, // Raise error on expressions and declarations with an implied 'any' type.
+		// "noImplicitThis": true, // Raise error on 'this' expressions with an implied 'any' type.
+		// "allowUnusedLabels": false,
+		// "allowUnreachableCode": false,
+		// "exactOptionalPropertyTypes": true,
+		// "noImplicitOverride": true, // Ensure overriding members in derived classes are marked with an 'override' modifier.
+		// "noImplicitReturns": true, // Report error when not all code paths in function return a value. (Disable if you use consistent-return)
+		// "noPropertyAccessFromIndexSignature": true, // Require undeclared properties from index signatures to use element accesses.
+		// "noUnusedLocals": true, // Report errors on unused locals. (Disable if you use @typescript-eslint/no-unused-vars)
+		// "noUnusedParameters": true, // Report errors on unused parameters. (Disable if you use @typescript-eslint/no-unused-vars)
+
+		/* Advanced Options */
+		"skipLibCheck": true // Skips checking the types of .d.ts files (Significant perf increase) (Recommended by TS)
+
+		/* Experimental Options */
+		// "experimentalDecorators": true, // Enables experimental support for ES7 decorators.
+		// "emitDecoratorMetadata": true,  // Enables experimental support for emitting type metadata for decorators.
+
+		/* If you're building for a library */
+		// "declaration": true, // Tells TypeScript to emit .d.ts files
+		/* ... in a monorepo: */
+		// "composite": true, // Tells TS to emit .tsbuildinfo files and cache builds to run faster.
+		/* Source Map Options */
+		// "sourceMap": true, // Tells TypeScript to generates source maps (.map files), useful for users of their libraries are debugging, they can jump to the original source code using.
+		// "declarationMap": true // Tells TypeScript to generates a source map for .d.ts files, useful for users of their libraries are debugging, they can jump to the original source code using
+		// "sourceRoot": "", // Specify the location where debugger should locate TypeScript files instead of source locations.
+		// "mapRoot": "", // Specify the location where debugger should locate map files instead of generated locations.
+		// "inlineSourceMap": true, // Emit a single file with source maps instead of having a separate file.
+		// "inlineSources": true, // Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set.
+	},
+	"references": [{ "path": "./tsconfig.node.json" }]
+}

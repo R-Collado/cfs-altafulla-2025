@@ -1,0 +1,27 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
+@use "breakpoints" as *;
+
+@mixin mq($size) {
+  $breakpoint: 0;
+
+  @if (map.has-key($breakpoints, $size)) {
+    $breakpoint: map.get($breakpoints, $size);
+  } @else if (meta.type-of($size) == 'number') {
+    $breakpoint: $size;
+    @if (math.is-unitless($size)) {
+        @error "variable $size is unitless. $size: '#{$size}'";
+    } @else {
+      $breakpoint: $size;
+    } 
+  } @else {
+    @error "value is not in the map"
+  }
+
+  @debug $breakpoint;
+
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}

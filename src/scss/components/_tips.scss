@@ -1,0 +1,35 @@
+@use '../abstracts/' as *;
+
+
+
+.tips {
+    gap: $size-4;
+    justify-content: space-between;
+
+    .tip {
+
+        & .tip__title {
+            font-size: var(--step-1);
+            font-weight: $font-weight-bold;
+            margin-left: $size-5;
+            position: relative;
+
+            &::before {
+                aspect-ratio: 1;
+                background-color: $body-text-color;
+                border-radius: 50%;
+                content: '';
+                height: $size-2;
+                left: -($size-5);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        & .tip__subtitle {
+            max-width: 35ch;
+        }
+    }
+}
+

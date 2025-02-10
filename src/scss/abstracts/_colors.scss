@@ -1,0 +1,69 @@
+// global color tokens
+// white
+$-clr-white: hsl(0 0% 100%);
+$-clr-black: hsl(0, 0%, 0%);
+
+// grey
+$-clr-grey-500: hsl(0, 0%, 51%);
+$-clr-grey-600: hsl(216, 5%, 21%);
+$-clr-grey-700: hsl(210, 4%, 11%);
+$-clr-grey-900: hsl(0, 3%, 7%);
+
+// orange
+$-clr-orange-300: hsl(8, 83%, 65%);
+$-clr-orange-400: hsl(8 62% 55%);
+$-clr-orange-500: hsl(8, 61%, 37%);
+
+// brown
+$-clr-brown-100: hsl(33 24% 92%);
+$-clr-brown-200: hsl(33 24% 88%);
+$-clr-brown-300: hsl(33 23% 69%);
+$-clr-brown-400: hsl(22 31% 44%);
+$-clr-brown-700: hsl(20 23% 23%);
+$-clr-brown-800: hsl(18 23% 10%);
+
+// turquoise
+$-clr-turquoise-200: hsl(163, 23%, 94%);
+$-clr-turquoise-400: hsl(165, 41%, 70%);
+$-clr-turquoise-700: hsl(193, 36%, 15%);
+$-clr-turquoise-800: hsl(194, 41%, 8%);
+$-clr-turquoise-900: hwb(165 6% 92%); 
+
+$colors: (
+  "neutral": (
+    "100": $-clr-white,
+    "200": $-clr-turquoise-200,
+    "500": $-clr-grey-500,
+    "600": $-clr-grey-600,
+    "700": $-clr-grey-700,
+    "800": $-clr-grey-900
+  ),
+  "accent": (
+    "300": $-clr-orange-300,
+    "400": $-clr-orange-400,
+    "500": $-clr-orange-500,
+  ),
+  "primary": (
+    "400": $-clr-turquoise-400,
+    "700": $-clr-turquoise-700,
+    "800": $-clr-turquoise-800,
+    "900": $-clr-turquoise-900
+  ),
+);
+
+// contextual color tokens
+$color-neutral-100: var(--neutral-100);
+$color-neutral-200: var(--neutral-200);
+$color-neutral-500: var(--neutral-500);
+$color-neutral-600: var(--neutral-600);
+$color-neutral-700: var(--neutral-700);
+$color-neutral-800: var(--neutral-800);
+
+$color-accent-300: var(--accent-300);
+$color-accent-400: var(--accent-400);
+$color-accent-500: var(--accent-500);
+
+$color-primary-400: var(--primary-400);
+$color-primary-700: var(--primary-700);
+$color-primary-800: var(--primary-800);
+$color-primary-900: var(--primary-900);

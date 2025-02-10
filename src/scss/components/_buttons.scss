@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+
+.button {
+  border: $button-border;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  text-transform: $button-text-transform;
+  transition: 275ms ease;
+
+
+  &[data-type="secondary"] {
+    background-color: $button-secondary-background;
+    color: $button-secondary-color;
+
+    &:is(:hover, :focus) {
+      background: $button-secondary-background-hover;
+      color: $button-secondary-color-hover;
+    }
+  }
+
+  &[data-type="primary"] {
+    background-color: $button-primary-background;
+    color: $button-primary-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+
+  &[data-type="transparent"] {
+    background-color: transparent;
+    color: $color-neutral-100;
+    opacity: 0.5;
+
+    &:is(:hover, :focus) {
+      opacity: 1;
+    }
+  }
+
+  &[data-type="timer-select"] {
+    background-color: $color-neutral-800;
+    color: $color-neutral-100;
+    display: grid;
+    opacity: .5;
+
+    &:is(:hover, :focus) {
+      opacity: 1;
+    }
+    
+  }
+
+  &[data-shape="pill"] {
+    border-radius: 100vw;
+  }
+
+  &[data-shape="rounded"] {
+    border-radius: 5px;
+  }
+
+  &[data-shape="small-rounded"] {
+    border-radius: 3px;
+  }
+}

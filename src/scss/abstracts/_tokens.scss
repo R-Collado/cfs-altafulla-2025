@@ -1,0 +1,88 @@
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'sizes' as *;
+
+// border-radius
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+$border-radius-3: $size-1;
+
+// shadows
+$box-shadow-1: 0 $size-1 $size-4 rgb(0 0 0 / 0.05);
+$box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 0.15);
+
+
+// contextual
+$color-text-default: $color-neutral-100;
+$color-background-default: $color-primary-900;
+$color-text-interactive-default: $color-accent-400;
+$color-text-interactive-hover: $color-accent-500;
+
+$letter-spacing-loose: 0.16em;
+
+// body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.5;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+$link-color: $color-text-interactive-default;
+$link-color-hover: $color-text-interactive-hover;
+
+$heading-font-family: $font-family-accent;
+$eading-color-default: $body-text-color;
+$heading-font-size: $font-size-600;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1;
+$heading-text-transform: uppercase;
+
+// layout
+$hero-padding-block: clamp(15rem, 15vh, 20rem);
+$user-forms-padding-block: clamp(15rem, 15vh, 20rem);
+$section-padding-block: clamp(5rem, 10vh, 6rem);
+
+$card-body-padding: $size-8;
+
+$grid-gap: 1.5rem;
+$flex-group-gap: 1rem;
+
+$container-min-margin-inline: $size-4;
+$container-max-width: 64rem;
+$container-max-width-narrow: 40rem;
+$container-max-width-wide: 75rem;
+$container-max-width-ultra-wide: 90rem;
+
+// buttons 
+$button-font-family: $body-font-family;
+$button-font-size: 15px;
+$button-font-weight: $font-weight-default;
+$button-text-transform: none;
+$button-padding: 1em 2.5em;
+$button-border: 0;
+$button-border-radius: $border-radius-1;
+
+$button-secondary-color: $color-neutral-100;
+$button-secondary-background: $color-primary-700;
+$button-secondary-color-hover: $color-primary-900;
+$button-secondary-background-hover: $color-neutral-100;
+
+$button-primary-color: $color-primary-900;
+$button-primary-background: $color-primary-400;
+$button-primary-color-hover: $color-primary-900;
+$button-primary-background-hover: $color-neutral-100;
+
+ //cards
+$card-flow-spacing: $size-2;
+$card-body-padding: $size-8;
+$card-background-default: $body-background-color;
+$card-color-default: $body-text-color;
+$card-font-family: $body-font-family;
+$card-border-radius: $border-radius-2;
+$card-box-shadow: $box-shadow-1;
+$card-line-height: 1.25;
+$card-heading-font-size: $heading-font-size;
+$card-heading-color-default: $card-color-default;
+
