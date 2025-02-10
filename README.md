@@ -1,3 +1,3 @@
-# REACT STARTER TEMPLATE
+# CFS ALTAFULLA
 
-This is a template to kickstart the development of a new project. It uses React + Typescript + Vite.
+This is the website for the Futsal Team CFS Altafulla. This is a revisited version of the website that will be used from the 2025-2026 season.
