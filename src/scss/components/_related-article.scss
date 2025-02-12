@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+.related-article {
+    gap: $size-4;
+
+    .img {
+        border-radius: 10px;
+        height: 6rem;
+        width: 8rem;
+    }
+
+
+    .title {
+        font-size: $size-4;
+        font-weight: 600;
+        letter-spacing: -.15px;
+        max-width: 20rem;
+    }
+
+    .date {
+        color: $color-neutral-500;
+        font-size: $size-3;
+    }
+
+}
