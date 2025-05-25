@@ -6,6 +6,7 @@
 
 .player-card {
     aspect-ratio: 1 / 1;
+    border-radius: 2px;
     box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.1),
         0 12px 28px rgba(0, 0, 0, 0.2);
@@ -36,8 +37,10 @@
         }
 
         .player-img {
+            filter: brightness(.8);
             margin: 0 auto;
             max-height: 20rem;
+            will-change: transform;
         }
     }
 

@@ -22,6 +22,7 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 	const playerNumber = playerCard?.querySelector('.player-number');
 	const playerRole = playerCard?.querySelector('.player-role');
 	const playerStats = playerCard?.querySelector('.player-stats');
+	const playerImg = playerCard?.querySelector('.player-img');
 
 	tl.to(
 		playerName,
@@ -48,6 +49,16 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 			opacity: 1,
 			duration: 0.45,
 			y: -20,
+		},
+		'start',
+	);
+
+	tl.to(
+		playerImg,
+		{
+			scale: 1.05,
+			filter: 'brightness(0.5) blur(2px)',
+			duration: 0.45,
 		},
 		'start',
 	);
