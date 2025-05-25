@@ -18,7 +18,9 @@
 			"goals": "Goals",
 			"assists": "Assists",
 			"goalsxGame": "GxG",
-			"assistsxGame": "AxG"
+			"assistsxGame": "AxG",
+			"saves": "Saves",
+			"cleanSheets": "Clean Sheets"
 		}
 	}
 }

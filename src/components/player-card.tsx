@@ -1,13 +1,14 @@
-import { FieldPlayer, Player } from '@/types/player';
-import dummyPlayer from '/images/players/dummy.webp';
+import { FieldPlayer, isKeeper, Keeper } from '@/types/player';
 import { useTranslation } from 'react-i18next';
 import playerBg from '/images/player-bg/player-bg-1.svg';
 
 import { gsap } from 'gsap';
 import { useRef } from 'react';
+import { KeeperCardStats } from './keeper-card-stats';
+import { PlayerCardStats } from './player-card-stats';
 
 type PlayerProps = {
-	player: FieldPlayer;
+	player: FieldPlayer | Keeper;
 };
 
 export const PlayerCard = ({ player }: PlayerProps) => {
@@ -81,19 +82,20 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 				</div>
 			</div>
 
-			<section className="player-stats | grid ">
-				<section className="stat matches">
+			<section className="player-stats | grid">
+				{isKeeper(player) ? <KeeperCardStats player={player} /> : <PlayerCardStats player={player} />}
+				{/* <section className="stat matches">
 					<p className="stat-name | uppercase">{t('players.stats.matches')}</p>
 					<p className="stat-value">{player.seasonStats.matches}</p>
 				</section>
 				<section className="stat goals-assists">
-					<p className="stat-name | uppercase">{t('players.stats.goals')}</p>
-					<p className="stat-value">{player.seasonStats.goals}</p>
+					<p className="stat-name | uppercase">{isKeeper ? t('players.stats.saves') : t('players.stats.goals')}</p>
+					<p className="stat-value">{isKeeper ? player.seasonStats.saves : player.seasonStats.goals}</p>
 				</section>
 				<section className="stat per-match">
 					<p className="stat-name | uppercase">{t('players.stats.assists')}</p>
 					<p className="stat-value">1</p>
-				</section>
+				</section> */}
 			</section>
 
 			<p className="player-role | uppercase">{t(`players.roles.${player.role}`)}</p>

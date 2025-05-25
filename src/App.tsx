@@ -21,7 +21,7 @@ const baseUrl = 'https://cfs-altafulla-backend.onrender.com/players';
 // };
 
 const dummyPlayer: FieldPlayer = {
-	id: 1,
+	id: 2,
 	firstName: 'Alejandro',
 	lastName: 'Balde',
 	role: 'keeper',
@@ -34,10 +34,12 @@ const dummyPlayer: FieldPlayer = {
 	careerStats: {
 		matches: 100,
 		goals: 20,
+		saves: 10,
 	},
 	seasonStats: {
 		matches: 20,
 		goals: 5,
+		saves: 5,
 	},
 };
 
