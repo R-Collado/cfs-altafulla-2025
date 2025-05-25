@@ -2,11 +2,14 @@ export interface Player {
 	id: number;
 	firstName: string;
 	lastName: string;
-	number: number;
 	role: 'keeper' | 'defender' | 'winger' | 'pivot';
 	team: string;
 	birthDay: string;
 	birthPlace: string;
+	isCurrentPlayer: boolean;
+	number?: number;
+	nickname?: string;
+	photoUrl?: string;
 }
 
 export interface FieldPlayer extends Player {

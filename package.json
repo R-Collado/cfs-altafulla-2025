@@ -96,14 +96,15 @@
 		"vite-bundle-visualizer": "1.0.0",
 		"vite-plugin-checker": "0.6.2",
 		"vite-plugin-compression2": "0.11.0",
+		"vite-plugin-purgecss": "^0.2.12",
 		"vite-plugin-svgr": "4.2.0",
 		"vite-tsconfig-paths": "4.2.2",
-		"vite-plugin-purgecss": "^0.2.12",
 		"vitest": "1.1.0"
 	},
 	"dependencies": {
 		"cmdk": "0.2.0",
 		"dotenv": "^16.4.4",
+		"gsap": "^3.13.0",
 		"html-react-parser": "4.2.2",
 		"i18next": "23.7.11",
 		"i18next-browser-languagedetector": "7.2.0",

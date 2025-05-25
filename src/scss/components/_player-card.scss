@@ -1,0 +1,90 @@
+@use "../abstracts" as *;
+
+.players {
+    gap: 2rem;
+}
+
+.player-card {
+    aspect-ratio: 1 / 1;
+    color: $color-neutral-100;
+    overflow: hidden;
+    position: relative;
+    width: 20rem;
+    z-index: 1;
+
+
+    .img-wrapper {
+        min-height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+
+        .img-overlay {
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+
+        .player-bg {
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .player-img {
+            margin: 0 auto;
+            max-height: 20rem;
+        }
+    }
+
+    .player-info {
+        transform: translateY(2rem);
+
+        .player-number {
+            font-size: $size-12;
+            font-weight: 700;
+            line-height: 1;
+            opacity: .5;
+        }
+
+        .player-name {
+            line-height: 1;
+            padding-block: .5rem;
+
+            .player-first-name {
+                font-size: $size-5;
+                margin-bottom: .2rem;
+            }
+
+            .player-last-name{
+                font-size: $size-8;
+                font-weight: 700;
+                letter-spacing: .1;
+            }
+        }
+    }
+
+    .player-stats {
+        grid-template-columns: repeat(3, 1fr);
+        opacity: 0;
+
+        .stat-name {
+            font-size: .6rem;
+            letter-spacing: 0.3px;
+        }
+
+        .stat-value {
+            font-size: $size-5;
+            font-weight: 700;
+        }
+    }
+
+    .player-role {
+        font-size: $size-3;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+   
+}

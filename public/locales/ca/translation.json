@@ -1,0 +1,24 @@
+{
+	"admin": {
+		"admin": "Admin",
+		"saveInfo": "Desar Informació"
+	},
+	"common": {
+		"send": "Enviar"
+	},
+	"players": {
+		"roles": {
+			"keeper": "Porter",
+			"defender": "Defensa",
+			"winger": "Ala",
+			"pivot": "Pivot"
+		},
+		"stats": {
+			"matches": "Partits",
+			"goals": "Gols",
+			"assists": "Assistències",
+			"goalsxGame": "Gols per Partit",
+			"assistsxGame": "Assistències per Partit"
+		}
+	}
+}

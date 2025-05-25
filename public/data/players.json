@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"firstName": "Aleix",
+		"lastName": "Roberto",
+		"number": 10,
+		"role": "pivot",
+		"team": "1masc",
+		"birthDate": "2004-12-06",
+		"birthPlace": "Altafulla",
+		"isCurrentPlayer": true,
+		"nickname": "Mamut",
+		"seasonStats": {
+			"matches": 10,
+			"goals": 8
+		},
+		"careerStats": {
+			"matches": 10,
+			"goals": 8
+		}
+	}
+]

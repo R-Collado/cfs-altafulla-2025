@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+
+.primary-header {
+    border: 1px solid red;
+    left: 0;
+    padding: 1rem 4rem;
+    top: 0;
+    width: 100vw;
+
+}
+
+.primary-nav {
+    gap: 2rem;
+    list-style: none;
+
+    li a {
+        color: $color-neutral-800;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+
+}
+
+body {
+    min-height: 1000rem;
+}
