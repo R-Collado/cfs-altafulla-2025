@@ -11,7 +11,13 @@
 			"keeper": "Keeper",
 			"defender": "Defender",
 			"winger": "Winger",
-			"pivot": "Pivot"
+			"pivot": "Pivot",
+			"plural": {
+				"keeper": "Keepers",
+				"defender": "Defenders",
+				"winger": "Wingers",
+				"pivot": "Pivots"
+			}
 		},
 		"stats": {
 			"matches": "Matches",

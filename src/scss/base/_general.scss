@@ -16,3 +16,8 @@ a {
 a:is(:hover, :focus) {
   color: $link-color-hover;
 }
+
+
+.page-container {
+  padding-top: 4rem;
+}

@@ -11,14 +11,22 @@
 			"keeper": "Portero",
 			"defender": "Defensa",
 			"winger": "Ala",
-			"pivot": "Pívot"
+			"pivot": "Pívot",
+			"plural": {
+				"keeper": "Porteros",
+				"defender": "Defensores",
+				"winger": "Alas",
+				"pivot": "Pívots"
+			}
 		},
 		"stats": {
 			"matches": "Partidos",
 			"goals": "Goles",
 			"assists": "Asistencias",
 			"goalsxGame": "Goles por Partido",
-			"assistsxGame": "Asistencias por Partido"
+			"assistsxGame": "Asistencias por Partido",
+			"saves": "Paradas",
+			"cleanSheets": "Porterías a 0"
 		}
 	}
 }

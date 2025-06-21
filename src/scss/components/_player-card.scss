@@ -1,7 +1,26 @@
 @use "../abstracts" as *;
 
+
 .players {
-    gap: 2rem;
+    // gap: 1re
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    place-items: center;
+
+    .players-by-role {
+
+        .players-role {
+            font-size: $size-7;
+            font-weight: 700;
+        }
+
+
+        .players-list {
+            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            margin-block: 2rem 4rem;
+        }
+    }
 }
 
 .player-card {

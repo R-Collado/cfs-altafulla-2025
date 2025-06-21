@@ -11,18 +11,9 @@ export const hideNavBar = () => {
 
 export const showNavBar = () => {
 	const navbar = document.querySelector('.primary-header');
-	console.log('showNavBar called');
 
 	gsap.to(navbar, {
 		y: 0,
 		duration: 0.5,
 	});
-};
-
-export const animateNavbar = (scroll: number, endScroll: number) => {
-	if (scroll < endScroll) {
-		console.log('scrolled up');
-	} else {
-		console.log('scrolled down');
-	}
 };

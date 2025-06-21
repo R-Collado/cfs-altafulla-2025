@@ -71,7 +71,6 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 		tl.reverse();
 	};
 
-	console.log(player.firstName, player.seasonStats);
 	return (
 		<article
 			className="player-card | pointer flex flex-col content-end"

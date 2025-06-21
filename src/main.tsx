@@ -4,24 +4,24 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './18n.js';
 import App from './App.tsx';
 import { BlogPage } from './pages/blog.tsx';
-import { TeamsPage } from './pages/teams.tsx';
 import ErrorPage from './pages/error-page.tsx';
 
 import '@scss/main.scss';
+import { PlayersPage } from './pages/players.tsx';
+import { HomePage } from './pages/home.tsx';
+import { TeamsPage } from './pages/teams.tsx';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
 		errorElement: <ErrorPage />,
-	},
-	{
-		path: '/blog',
-		element: <BlogPage />,
-	},
-	{
-		path: '/teams',
-		element: <TeamsPage />,
+		children: [
+			{ index: true, element: <HomePage /> },
+			{ path: '/blog', element: <BlogPage /> },
+			{ path: '/:team/players', element: <PlayersPage /> },
+			{ path: '/teams', element: <TeamsPage /> },
+		],
 	},
 ]);
 
