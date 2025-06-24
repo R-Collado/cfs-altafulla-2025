@@ -28,5 +28,9 @@
 			"saves": "Aturades",
 			"cleanSheets": "Porteries a 0"
 		}
+	},
+	"blog": {
+		"blog": "Bloc",
+		"relatedPosts": "Articles Relacionats"
 	}
 }

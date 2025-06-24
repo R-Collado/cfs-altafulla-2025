@@ -28,5 +28,9 @@
 			"saves": "Saves",
 			"cleanSheets": "Clean Sheets"
 		}
+	},
+	"blog": {
+		"blog": "Blog",
+		"relatedPosts": "Related Posts"
 	}
 }

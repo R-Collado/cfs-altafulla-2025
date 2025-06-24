@@ -28,5 +28,9 @@
 			"saves": "Paradas",
 			"cleanSheets": "Porterías a 0"
 		}
+	},
+	"blog": {
+		"blog": "Blog",
+		"relatedPosts": "Artículos Relacionados"
 	}
 }
