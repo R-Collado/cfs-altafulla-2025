@@ -27,6 +27,24 @@
 			"assistsxGame": "Asistencias por Partido",
 			"saves": "Paradas",
 			"cleanSheets": "Porterías a 0"
+		},
+		"info": {
+			"age": "Edad",
+			"birthdate": "Fecha de nacimiento",
+			"birthplace": "Lugar de nacimiento",
+			"nationality": "Nacionalidad"
+		}
+	},
+	"matches": {
+		"matches": "Partidos",
+		"lastMatches": "Últimos Partidos",
+		"nextMatch": "Próximo Partido",
+		"match": "Partido",
+		"type": {
+			"friendly": "Amistoso",
+			"league": "Liga",
+			"cup": "Copa",
+			"tournament": "Torneo"
 		}
 	},
 	"blog": {

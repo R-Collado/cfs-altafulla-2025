@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router';
 
-const USE_LOCAL = false;
+const USE_LOCAL = true;
 
 export const API_BASE_URL = USE_LOCAL ? 'http://localhost:3001' : 'https://cfs-altafulla-backend.onrender.com';
 
@@ -21,8 +21,6 @@ export const PlayersPage = () => {
 
 	const teamUrl = `${API_BASE_URL}/teams/${teamId}/players`;
 
-	console.log('teamid:', teamId); // Debugging line to check teamId
-
 	useEffect(() => {
 		fetch(teamUrl)
 			.then((res) => res.json()) // ← return the parsed JSON
@@ -34,8 +32,6 @@ export const PlayersPage = () => {
 
 	if (loading) return <p>Loading players...</p>;
 	if (!players || players.length === 0) return <p>No players found.</p>;
-
-	console.log('players:', players); // Debugging line to check players data
 
 	return (
 		<section className="page-container players">

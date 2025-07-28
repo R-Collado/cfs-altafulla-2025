@@ -26,6 +26,9 @@ dependencies:
   i18next-http-backend:
     specifier: 2.4.2
     version: 2.4.2
+  luxon:
+    specifier: ^3.7.1
+    version: 3.7.1
   match-sorter:
     specifier: 6.3.1
     version: 6.3.1
@@ -59,6 +62,9 @@ dependencies:
   react-router-dom:
     specifier: ^7.6.1
     version: 7.6.1(react-dom@18.2.0)(react@18.2.0)
+  swiper:
+    specifier: ^11.2.10
+    version: 11.2.10
   tailwind-merge:
     specifier: 2.2.0
     version: 2.2.0
@@ -73,6 +79,9 @@ devDependencies:
   '@types/eslint':
     specifier: 8.56.0
     version: 8.56.0
+  '@types/luxon':
+    specifier: ^3.6.2
+    version: 3.6.2
   '@types/react':
     specifier: 18.2.45
     version: 18.2.45
@@ -2102,6 +2111,10 @@ packages:
 
   /@types/json-schema@7.0.15:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+    dev: true
+
+  /@types/luxon@3.6.2:
+    resolution: {integrity: sha512-R/BdP7OxEMc44l2Ex5lSXHoIXTB2JLNa3y2QISIbr58U/YcsffyQrYW//hZSdrfxrjRZj3GcUoxMPGdO8gSYuw==}
     dev: true
 
   /@types/minimatch@3.0.5:
@@ -6382,6 +6395,11 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /luxon@3.7.1:
+    resolution: {integrity: sha512-RkRWjA926cTvz5rAb1BqyWkKbbjzCGchDUIKMCUvNi17j6f6j8uHGDV82Aqcqtzd+icoYpELmG3ksgGiFNNcNg==}
+    engines: {node: '>=12'}
+    dev: false
+
   /magic-string@0.30.9:
     resolution: {integrity: sha512-S1+hd+dIrC8EZqKyT9DstTH/0Z+f76kmmvZnkfQVmOpDEF9iVgdYif3Q/pIWHmCoo59bQVGW0kVL3e2nl+9+Sw==}
     engines: {node: '>=12'}
@@ -8818,6 +8836,11 @@ packages:
   /svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
+
+  /swiper@11.2.10:
+    resolution: {integrity: sha512-RMeVUUjTQH+6N3ckimK93oxz6Sn5la4aDlgPzB+rBrG/smPdCTicXyhxa+woIpopz+jewEloiEE3lKo1h9w2YQ==}
+    engines: {node: '>= 4.7.0'}
+    dev: false
 
   /symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}

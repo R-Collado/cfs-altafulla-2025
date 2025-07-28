@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+.next-match-timer {
+
+    background-image: linear-gradient(to top, $color-neutral-800, $color-neutral-500);
+    padding: 2rem 2rem;
+    width: 25rem;
+
+    .time {
+        color: $color-neutral-100;
+        font-size: 3rem;
+    }
+
+    .date {
+        color: $color-neutral-300;
+        text-transform: uppercase;
+    }
+}

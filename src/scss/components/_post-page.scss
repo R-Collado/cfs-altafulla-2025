@@ -1,0 +1,121 @@
+@use "../abstracts/" as *;
+
+.post-page {
+    padding-block: $size-12;
+
+    .author-info {
+        margin-right: 2rem;
+        margin-top: .5rem;
+
+        .details {
+            align-items: end;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-top: .25rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+        }
+
+        .post-date{
+            color: $color-neutral-500;
+            font-size: 0.8rem;
+        }
+
+        img {
+            border-radius: 50%;
+            height: 3.25rem;
+            margin-left: 1rem;
+            width: 3.25rem;
+        }
+    }
+
+    .post-header {
+        margin: 0 auto;
+        max-width: max-content;
+        position: relative;
+        text-align: left;
+        transform: translateX(-10%);
+
+        .post-title {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            max-width: 20ch;
+        }
+
+        .post-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        &::after {
+            background-color: $color-neutral-800;
+            border-radius: 100vw;
+            bottom: 32%;
+            content: "";
+            height: 0.3rem;
+            position: absolute;
+            right: .5rem;
+            transform: translateX(100%);
+            width: 9rem;
+        }
+    }
+
+    .post {
+        line-height: 1.8;
+        margin-block: $size-9;
+        margin-inline: 10rem;
+        text-align: justify;
+
+        img {
+            border-radius: 5px;
+            box-shadow: 
+            0 118px 33px rgba(0, 0, 0, 0),
+            0 75px 30px rgba(0, 0, 0, 0.01),
+            0 43px 26px rgba(0, 0, 0, 0.05),
+            0 19px 19px rgba(0, 0, 0, 0.09),
+            0 5px 10px rgba(0, 0, 0, 0.1);
+            height: 30rem;
+            margin-block: $size-9;
+            object-fit: cover;
+            width: 100vw;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-inline: 6rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .post-footer {
+       padding-inline: $size-14;
+
+       .related-posts {
+            gap: $size-8;
+       }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-block: $size-12;
+            position: relative;
+    
+            &::after {
+                background-color: $color-neutral-800;
+                border-radius: 100vw;
+                bottom: -50%;
+                content: '';
+                height: 0.2rem;
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%);
+                width: 10rem;
+            }
+        }
+    }
+    
+   
+}

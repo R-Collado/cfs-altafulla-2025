@@ -3,12 +3,12 @@ export const truncateText = (text, maxLength) => {
 };
 
 export default function paragraphBlock({ text }) {
+	console.log('Received text:', text);
+
 	return (
 		<>
-			{text.split(/\n{2,}/).map((paragraph, idx) => (
-				<p key={idx} className="text-lg text-gray-800 leading-relaxed mb-6">
-					{paragraph.trim()}
-				</p>
+			{text.split(/\r?\n/).map((paragraph, idx) => (
+				<p key={idx}>{paragraph.trim()}</p>
 			))}
 		</>
 	);

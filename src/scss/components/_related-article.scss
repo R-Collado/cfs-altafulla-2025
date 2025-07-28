@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
 .related-article {
+    cursor: pointer;
     gap: $size-4;
 
     .img {

@@ -23,6 +23,10 @@
     }
 }
 
+.player-link{
+    text-decoration: none;
+}
+
 .player-card {
     aspect-ratio: 1 / 1;
     border-radius: 2px;
@@ -32,8 +36,13 @@
     color: $color-neutral-100;
     overflow: hidden;
     position: relative;
+    text-decoration: none;
     width: 20rem;
     z-index: 1;
+
+    & * {
+        text-decoration: none;
+    }
 
     .img-wrapper {
         min-height: 100%;

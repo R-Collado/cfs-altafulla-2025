@@ -27,6 +27,24 @@
 			"assistsxGame": "AxG",
 			"saves": "Saves",
 			"cleanSheets": "Clean Sheets"
+		},
+		"info": {
+			"age": "Age",
+			"birthdate": "Birthday",
+			"birthplace": "Birthplace",
+			"nationality": "Nationality"
+		}
+	},
+	"matches": {
+		"matches": "Matches",
+		"lastMatches": "Last Matches",
+		"nextMatch": "Next Match",
+		"match": "Match",
+		"type": {
+			"friendly": "Friendly",
+			"league": "League",
+			"cup": "Cup",
+			"tournament": "Tournament"
 		}
 	},
 	"blog": {

@@ -27,6 +27,24 @@
 			"assistsxGame": "Assistències per Partit",
 			"saves": "Aturades",
 			"cleanSheets": "Porteries a 0"
+		},
+		"info": {
+			"age": "Edat",
+			"birthdate": "Data de naixement",
+			"birthplace": "Lloc de naixement",
+			"nationality": "Nacionalitat"
+		}
+	},
+	"matches": {
+		"matches": "Partits",
+		"lastMatches": "Últims Partits",
+		"nextMatch": "Pròxim Partit",
+		"match": "Partit",
+		"type": {
+			"friendly": "Amistós",
+			"league": "Lliga",
+			"cup": "Copa",
+			"tournament": "Torneig"
 		}
 	},
 	"blog": {

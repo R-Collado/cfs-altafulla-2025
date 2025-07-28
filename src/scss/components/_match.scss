@@ -1,0 +1,94 @@
+@use "../abstracts/" as *;
+
+.match {
+    gap: 2rem;
+    max-width: max-content;
+
+    .match__date {
+        padding: .5rem;
+
+        .match__date__day {
+            font-size: 1.25rem;
+        }
+
+        .match__date__month {
+            font-size: 0.875rem;
+        }
+    }
+
+    .match__info {
+        padding-bottom: 3rem;
+        text-align: left;
+
+        .match__info__header {
+            color: $color-neutral-500;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    .match__team {
+        align-items: center;
+        gap: 2rem;
+
+        span {
+            color: $color-primary-400;
+        }
+        
+
+        & + * {
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+.match-section {
+    padding-inline: 2rem;
+    padding-top: 3rem;
+    text-align: left;
+
+
+    &.last-matches {
+        background: $color-neutral-600;
+
+        .match__date {
+            background: $color-neutral-700;
+        }
+    }
+
+    &.next-match {
+        background: $color-neutral-700;
+
+        .match__date {
+            background: $color-neutral-600;
+        }
+    }
+
+    .match-section__header { 
+        font-weight: 700;
+        margin-bottom: 1.5rem;       
+     }
+     .match-section__match-list {
+         gap: 2rem;
+     }
+
+     .btn-standings {
+        background-color: $color-neutral-700;
+        border: 1px solid $color-primary-400;
+        color: $color-primary-400;
+        padding: .5em 1em;
+
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background-color: $color-primary-400;
+            color: $color-neutral-700;
+        }
+     }
+}

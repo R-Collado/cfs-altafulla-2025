@@ -5,6 +5,7 @@ $-clr-black: hsl(0, 0%, 0%);
 
 // grey
 $-clr-grey-100: hsl(40, 43%, 97%);
+$-clr-grey-300: hsl(0, 0%, 70%);
 $-clr-grey-500: hsl(0, 0%, 51%);
 $-clr-grey-600: hsl(216, 5%, 21%);
 $-clr-grey-700: hsl(210, 4%, 11%);
@@ -23,6 +24,7 @@ $-clr-brown-300: hsl(33 23% 69%);
 $-clr-brown-400: hsl(22 31% 44%);
 $-clr-brown-700: hsl(20 23% 23%);
 $-clr-brown-800: hsl(18 23% 10%);
+
 
 // turquoise
 $-clr-turquoise-200: hsl(163, 23%, 94%);
@@ -46,11 +48,12 @@ $colors: (
   "neutral": (
     "100": $-clr-white,
     "200": $-clr-grey-100, //background color
+    "300": $-clr-grey-300, 
     "500": $-clr-grey-500,
     "600": $-clr-grey-600,
     "700": $-clr-grey-700,
     "800": $-clr-grey-800, //text color
-    "900": $-clr-black,
+    "900": $-clr-grey-900,
   ),
   "accent": (
     "300": $-clr-orange-300,
@@ -68,10 +71,13 @@ $colors: (
 // contextual color tokens
 $color-neutral-100: var(--neutral-100);
 $color-neutral-200: var(--neutral-200);
+$color-neutral-300: var(--neutral-300);
 $color-neutral-500: var(--neutral-500);
 $color-neutral-600: var(--neutral-600);
 $color-neutral-700: var(--neutral-700);
 $color-neutral-800: var(--neutral-800);
+$color-neutral-900: var(--neutral-900);
+
 
 $color-accent-300: var(--accent-300);
 $color-accent-400: var(--accent-400);

@@ -10,6 +10,8 @@ import '@scss/main.scss';
 import { PlayersPage } from './pages/players.tsx';
 import { HomePage } from './pages/home.tsx';
 import { TeamsPage } from './pages/teams.tsx';
+import { PostPage } from './pages/post-page.tsx';
+import { PlayerDetailsPage } from './pages/player-details.tsx';
 
 const router = createBrowserRouter([
 	{
@@ -20,7 +22,10 @@ const router = createBrowserRouter([
 			{ index: true, element: <HomePage /> },
 			{ path: '/blog', element: <BlogPage /> },
 			{ path: '/:team/players', element: <PlayersPage /> },
+			{ path: '/:team/players/:playerId', element: <PlayerDetailsPage /> },
 			{ path: '/teams', element: <TeamsPage /> },
+			{ path: '/blog', element: <BlogPage /> },
+			{ path: 'blog/:postId', element: <PostPage /> },
 		],
 	},
 ]);

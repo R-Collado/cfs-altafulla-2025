@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { useRef } from 'react';
 import { KeeperCardStats } from './keeper-card-stats';
 import { PlayerCardStats } from './player-card-stats';
+import { Link } from 'react-router';
 
 type PlayerProps = {
 	player: FieldPlayer | Keeper;
@@ -34,6 +35,7 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 		'start', // start of the timeline (can be any label),
 	);
 
+	console.log(player.teamId);
 	tl.to(
 		playerNumber,
 		{
@@ -72,43 +74,33 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 	};
 
 	return (
-		<article
-			className="player-card | pointer flex flex-col content-end"
-			ref={playerCardRef}
-			id={`player-${player.id}`}
-			onMouseEnter={handleMouseEnter}
-			onMouseLeave={handleMouseLeave}>
-			<div className="img-wrapper">
-				<div className="img-overlay"></div>
-				<img className="player-bg" src={playerBg} alt={`${player.firstName} ${player.lastName}`} />
-				<img className="player-img" src={player.photoUrl} alt={`${player.firstName} ${player.lastName}`} />
-			</div>
-
-			<div className="player-info">
-				<p className="player-number">{player.number}</p>
-				<div className="player-name">
-					<p className="player-first-name">{player.firstName}</p>
-					<p className="player-last-name | uppercase">{player.lastName}</p>
+		<Link to={`/${player.teamId}/players/${player.id}`} className="player-link">
+			<article
+				className="player-card | pointer flex flex-col content-end"
+				ref={playerCardRef}
+				id={`player-${player.id}`}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}>
+				<div className="img-wrapper">
+					<div className="img-overlay"></div>
+					<img className="player-bg" src={playerBg} alt={`${player.firstName} ${player.lastName}`} />
+					<img className="player-img" src={player.photoUrl} alt={`${player.firstName} ${player.lastName}`} />
 				</div>
-			</div>
 
-			<section className="player-stats | grid">
-				{isKeeper(player) ? <KeeperCardStats player={player} /> : <PlayerCardStats player={player} />}
-				{/* <section className="stat matches">
-					<p className="stat-name | uppercase">{t('players.stats.matches')}</p>
-					<p className="stat-value">{player.seasonStats.matches}</p>
-				</section>
-				<section className="stat goals-assists">
-					<p className="stat-name | uppercase">{isKeeper ? t('players.stats.saves') : t('players.stats.goals')}</p>
-					<p className="stat-value">{isKeeper ? player.seasonStats.saves : player.seasonStats.goals}</p>
-				</section>
-				<section className="stat per-match">
-					<p className="stat-name | uppercase">{t('players.stats.assists')}</p>
-					<p className="stat-value">1</p>
-				</section> */}
-			</section>
+				<div className="player-info">
+					<p className="player-number">{player.number}</p>
+					<div className="player-name">
+						<p className="player-first-name">{player.firstName}</p>
+						<p className="player-last-name | uppercase">{player.lastName}</p>
+					</div>
+				</div>
 
-			<p className="player-role | uppercase">{t(`players.roles.${player.role}`)}</p>
-		</article>
+				<section className="player-stats | grid">
+					{isKeeper(player) ? <KeeperCardStats player={player} /> : <PlayerCardStats player={player} />}
+				</section>
+
+				<p className="player-role | uppercase">{t(`players.roles.${player.role}`)}</p>
+			</article>
+		</Link>
 	);
 };

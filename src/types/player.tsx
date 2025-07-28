@@ -3,23 +3,24 @@ export interface Player {
 	firstName: string;
 	lastName: string;
 	role: 'keeper' | 'defender' | 'winger' | 'pivot';
-	team: string;
+	teamId: string;
 	birthDay: string;
 	birthPlace: string;
 	isCurrentPlayer: boolean;
 	number?: number;
 	nickname?: string;
 	photoUrl?: string;
+	bio: PlayerBio;
 }
 
 export interface FieldPlayer extends Player {
 	seasonStats: FieldPlayerStats;
-	careerStats: FieldPlayerStats;
+	totalStats: FieldPlayerStats;
 }
 
 export interface Keeper extends Player {
 	seasonStats: KeeperStats;
-	careerStats: KeeperStats;
+	totalStats: KeeperStats;
 }
 
 export interface FieldPlayerStats {
@@ -32,6 +33,12 @@ export interface KeeperStats {
 	matches: number;
 	saves: number;
 	cleanSheets?: number;
+}
+
+export interface PlayerBio {
+	ca: string;
+	en: string;
+	es: string;
 }
 
 // Type guards
