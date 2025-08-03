@@ -1,0 +1,65 @@
+@use '../abstracts/' as *;
+
+.home-page > section {
+    padding-block: 4rem;
+}
+
+.hero {
+    gap: 2rem;
+
+    .posts-preview-slider {
+        padding-inline: 10rem;
+
+        .swiper-slide {
+            width: max-content !important;
+            
+            & + * {
+                margin-left: 2rem;
+            };
+        }
+    }
+}
+
+.matches-section {
+    flex-direction: column;
+    width: 100vw;
+
+    .match-section{
+        width: 100%;
+
+        &.next-match {
+            position: relative;
+            
+            .next-match-timer {
+                position: absolute;
+                right: 0;
+                top: -25%;
+                visibility: hidden;
+
+               
+            }
+        } 
+    }
+
+    @media (min-width: 1200px) {
+        flex-direction: row ;
+
+        .match-section.next-match {
+            .next-match-timer {
+                visibility: visible;
+            }
+        }
+
+    }
+}
+
+.players-section {
+    padding-inline: 4rem;
+
+    .players-section__header  {
+        font-size: $size-6;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+    
+}

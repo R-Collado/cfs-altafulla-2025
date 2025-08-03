@@ -10,10 +10,6 @@ import { useEffect, useState } from 'react';
 import { FieldPlayer, Keeper } from '@/types/player';
 import { getPlayersByTeamId } from '@/api/players';
 
-const USE_LOCAL = true;
-
-export const API_BASE_URL = USE_LOCAL ? 'http://localhost:3001' : 'https://cfs-altafulla-backend.onrender.com';
-
 export const PlayerSlider = () => {
 	const [players, setPlayers] = useState<(FieldPlayer | Keeper)[]>([]);
 

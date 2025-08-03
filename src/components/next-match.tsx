@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Match } from './match';
 import { DateTime } from 'luxon';
+import { Timer } from '@/components/timer';
 
 export const NextMatch = () => {
 	const { t } = useTranslation();
@@ -20,6 +21,7 @@ export const NextMatch = () => {
 		<div className="match-section next-match">
 			<h3 className="match-section__header | uppercase">{t('matches.nextMatch')}:</h3>
 			<Match match={dummymatch} isNext={true} />
+			<Timer />
 		</div>
 	);
 };

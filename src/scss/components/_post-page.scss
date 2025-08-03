@@ -52,7 +52,7 @@
         }
 
         &::after {
-            background-color: $color-neutral-800;
+            background-color: $color-neutral-100;
             border-radius: 100vw;
             bottom: 32%;
             content: "";
@@ -104,7 +104,7 @@
             position: relative;
     
             &::after {
-                background-color: $color-neutral-800;
+                background-color: $color-neutral-100;
                 border-radius: 100vw;
                 bottom: -50%;
                 content: '';

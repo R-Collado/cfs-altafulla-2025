@@ -74,13 +74,23 @@
 
 
 .post-preview-home {
+    border-radius: .5rem;
     display: flex;
     flex-direction: column;
-    height: 20rem;
+    height: 23.125rem;
     justify-content: end;
+    overflow: hidden;
     position: relative;
-    width: 15rem;
+    width: 40rem;
     z-index: 1;
+
+    &.size-large {
+        width: 40rem;
+    }
+
+    &.size-small {
+        width: 20rem;
+    }
     
 
     .post-img-wrapper  {
@@ -108,7 +118,9 @@
     .post-title {
         color: $color-neutral-100;
         font-weight: 600;
+        max-width: 40ch;
         padding: 1rem;
+        width: max-content;
 
     }
     
@@ -117,7 +129,7 @@
         border: none;
         font-size: $size-3;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
         margin-left: 1rem;
         padding: .5em 1em;
         width: max-content;
