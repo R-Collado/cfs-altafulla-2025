@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+.player-slider {
+
+    .player-slide {
+        // background-color: red;
+        // height: 10rem;
+        width: min-content !important;
+    }
+
+    .swiper-pagination-bullet {
+        background: $color-primary-400;
+    }
+
+    
+}
