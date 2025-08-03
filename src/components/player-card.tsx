@@ -35,7 +35,6 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 		'start', // start of the timeline (can be any label),
 	);
 
-	console.log(player.teamId);
 	tl.to(
 		playerNumber,
 		{
