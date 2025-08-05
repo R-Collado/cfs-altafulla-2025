@@ -34,7 +34,7 @@ export const Match = ({ match, isNext }: MatchProps) => {
 						<MatchTeam teamName="CFS Altafulla" goals={goals.altafulla} className="fw-bold" isNext={isNext} />
 					</>
 				)}
-				{isNext && <button className="btn-standings | uppercase pointer">clasificación</button>}
+				{isNext && <button className="btn-standings | uppercase pointer">{t('matches.standings')}</button>}
 			</div>
 		</article>
 	);
