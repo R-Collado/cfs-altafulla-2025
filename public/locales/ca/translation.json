@@ -4,9 +4,11 @@
 		"saveInfo": "Desar Informació"
 	},
 	"common": {
-		"send": "Enviar"
+		"send": "Enviar",
+		"readMore": "Llegir Més"
 	},
 	"players": {
+		"ourPlayers": "Els Nostres Jugadors",
 		"roles": {
 			"keeper": "Porter",
 			"defender": "Defensa",
@@ -37,6 +39,7 @@
 	},
 	"matches": {
 		"matches": "Partits",
+		"standings": "Classificació",
 		"lastMatches": "Últims Partits",
 		"nextMatch": "Pròxim Partit",
 		"match": "Partit",
@@ -50,5 +53,15 @@
 	"blog": {
 		"blog": "Bloc",
 		"relatedPosts": "Articles Relacionats"
+	},
+	"time": {
+		"day": "{{count}} dia",
+		"day_plural": "{{count}} dies",
+		"hour": "{{count}} hora",
+		"hour_plural": "{{count}} hores",
+		"minute": "{{count}} minut",
+		"minute_plural": "{{count}} minuts",
+		"second": "{{count}} segon",
+		"second_plural": "{{count}} segons"
 	}
 }

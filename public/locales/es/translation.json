@@ -4,9 +4,11 @@
 		"saveInfo": "Guardar Información"
 	},
 	"common": {
-		"send": "Enviar"
+		"send": "Enviar",
+		"readMore": "Leer Más"
 	},
 	"players": {
+		"ourPlayers": "Nuestros Jugadores",
 		"roles": {
 			"keeper": "Portero",
 			"defender": "Defensa",
@@ -21,6 +23,7 @@
 		},
 		"stats": {
 			"matches": "Partidos",
+			"standings": "Clasificación",
 			"goals": "Goles",
 			"assists": "Asistencias",
 			"goalsxGame": "Goles por Partido",
@@ -37,6 +40,7 @@
 	},
 	"matches": {
 		"matches": "Partidos",
+		"standings": "Clasificación",
 		"lastMatches": "Últimos Partidos",
 		"nextMatch": "Próximo Partido",
 		"match": "Partido",
@@ -50,5 +54,15 @@
 	"blog": {
 		"blog": "Blog",
 		"relatedPosts": "Artículos Relacionados"
+	},
+	"time": {
+		"day": "{{count}} día",
+		"day_plural": "{{count}} días",
+		"hour": "{{count}} hora",
+		"hour_plural": "{{count}} horas",
+		"minute": "{{count}} minuto",
+		"minute_plural": "{{count}} minutos",
+		"second": "{{count}} segundo",
+		"second_plural": "{{count}} segundos"
 	}
 }

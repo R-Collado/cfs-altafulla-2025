@@ -4,9 +4,11 @@
 		"saveInfo": "Save Info"
 	},
 	"common": {
-		"send": "Send"
+		"send": "Send",
+		"readMore": "Read More"
 	},
 	"players": {
+		"ourPlayers": "Our Players",
 		"roles": {
 			"keeper": "Keeper",
 			"defender": "Defender",
@@ -37,6 +39,7 @@
 	},
 	"matches": {
 		"matches": "Matches",
+		"standings": "Standings",
 		"lastMatches": "Last Matches",
 		"nextMatch": "Next Match",
 		"match": "Match",
@@ -50,5 +53,15 @@
 	"blog": {
 		"blog": "Blog",
 		"relatedPosts": "Related Posts"
+	},
+	"time": {
+		"day": "{{count}} day",
+		"day_plural": "{{count}} days",
+		"hour": "{{count}} hour",
+		"hour_plural": "{{count}} hours",
+		"minute": "{{count}} minute",
+		"minute_plural": "{{count}} minutes",
+		"second": "{{count}} second",
+		"second_plural": "{{count}} seconds"
 	}
 }
