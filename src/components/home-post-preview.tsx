@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { formatBlogPostDate } from '@/utils/utilities/date';
 import { PostTag } from './post-tag';
 
@@ -10,6 +12,7 @@ interface Props {
 }
 export const HomePostPreview = ({ post, type = 'small' }: Props) => {
 	const { title, bodyTop, date, image, tag } = post;
+	const { t } = useTranslation();
 
 	const onPreviewClick = () => {
 		location.href = `/blog/${post.id}`;
@@ -26,7 +29,7 @@ export const HomePostPreview = ({ post, type = 'small' }: Props) => {
 			</div>
 			<h2 className="post-title | text-left">{title}</h2>
 			<p className="post-excerpt | text-left">{truncateText(bodyTop, 100)}</p>
-			<button className="btn-read-more | uppercase pointer">read more</button>
+			<button className="btn-read-more | uppercase pointer">{t('common.readMore')}</button>
 		</article>
 	);
 };
