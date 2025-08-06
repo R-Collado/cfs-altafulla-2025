@@ -1,6 +1,5 @@
 import { Link } from 'react-router';
 import { Dropdown } from './dropdown';
-import { s } from 'vitest/dist/reporters-O4LBziQ_.js';
 
 export const PrimaryNav = () => {
 	const teamsOptions = [

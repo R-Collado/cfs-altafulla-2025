@@ -8,9 +8,15 @@ interface MatchProps {
 }
 
 export const Match = ({ match, isNext }: MatchProps) => {
-	// const date = DateTime.local(2025, 7, 25, 16, 0);
 	const { t } = useTranslation();
 	const { date, type, rival, goals, isAtHome } = match;
+
+	const openLink = () => {
+		window.open(
+			'https://www.fcf.cat/resultats/2526/futbol-sala/lliga-segona-divisio-catalana-futbol-sala/tgn-gr-11',
+			'_blank',
+		);
+	};
 
 	// Get type "past-match" or "future-match" based on the date. And add it to the className or as data-value to change style.
 	return (
@@ -34,7 +40,11 @@ export const Match = ({ match, isNext }: MatchProps) => {
 						<MatchTeam teamName="CFS Altafulla" goals={goals.altafulla} className="fw-bold" isNext={isNext} />
 					</>
 				)}
-				{isNext && <button className="btn-standings | uppercase pointer">{t('matches.standings')}</button>}
+				{isNext && (
+					<button className="btn-standings | uppercase pointer" onClick={openLink}>
+						{t('matches.standings')}
+					</button>
+				)}
 			</div>
 		</article>
 	);
