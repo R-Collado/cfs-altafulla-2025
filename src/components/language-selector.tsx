@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { LanguageIcon } from './language-icon';
 
 export const LanguageSelector = () => {
@@ -10,6 +10,11 @@ export const LanguageSelector = () => {
 	const languageListRef = useRef<HTMLDivElement | null>(null);
 
 	const sortedLanguages = [activeLanguage, ...languages.filter((l) => l !== activeLanguage)];
+
+	useEffect(() => {
+		const storedLanguage = localStorage.getItem('currentLanguage') || 'es';
+		i18n.changeLanguage(storedLanguage);
+	}, []);
 
 	const handleLanguageChange = (lang: string) => {
 		i18n.changeLanguage(lang);
