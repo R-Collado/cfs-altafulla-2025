@@ -1,23 +1,20 @@
 import { useTranslation } from 'react-i18next';
 
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 import { LanguageIcon } from './language-icon';
 
 export const LanguageSelector = () => {
 	const { i18n } = useTranslation();
-	const [activeLanguage, setActiveLanguage] = useState('');
+	const activeLanguage = i18n.language;
 	const languages = ['en', 'es', 'ca']; // List of supported languages
 	const languageListRef = useRef<HTMLDivElement | null>(null);
 
-	useEffect(() => {
-		const currentLanguage = localStorage.getItem('currentLanguage') || i18n.language || 'es';
-		setActiveLanguage(currentLanguage);
-	}, []);
+	const sortedLanguages = [activeLanguage, ...languages.filter((l) => l !== activeLanguage)];
 
 	const handleLanguageChange = (lang: string) => {
 		i18n.changeLanguage(lang);
 		localStorage.setItem('currentLanguage', lang);
-		window.location.reload();
+		languageListRef.current?.classList.remove('open');
 	};
 
 	const toggleLanguageList = () => {
@@ -27,12 +24,12 @@ export const LanguageSelector = () => {
 	return (
 		<div className="language-selector">
 			<button className="active-language | uppercase pointer" onClick={toggleLanguageList}>
-				<LanguageIcon lang={activeLanguage} />
+				<LanguageIcon lang={sortedLanguages[0]} />
 				<span>{activeLanguage}</span>
 			</button>
 
 			<div className="language-list" ref={languageListRef}>
-				{languages
+				{sortedLanguages
 					.filter((lang) => lang !== activeLanguage)
 					.map((lang) => (
 						<button
