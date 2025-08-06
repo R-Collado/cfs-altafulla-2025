@@ -5,7 +5,10 @@
 	},
 	"common": {
 		"send": "Enviar",
-		"readMore": "Llegir Més"
+		"readMore": "Llegir Més",
+		"countries": {
+			"es": "Espanya"
+		}
 	},
 	"players": {
 		"ourPlayers": "Els Nostres Jugadors",

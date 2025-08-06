@@ -5,7 +5,10 @@
 	},
 	"common": {
 		"send": "Send",
-		"readMore": "Read More"
+		"readMore": "Read More",
+		"countries": {
+			"es": "Spain"
+		}
 	},
 	"players": {
 		"ourPlayers": "Our Players",

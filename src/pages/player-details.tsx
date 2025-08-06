@@ -12,6 +12,7 @@ export const PlayerDetailsPage = () => {
 	const { playerId } = useParams();
 	const [player, setPlayer] = useState<FieldPlayer | Keeper>();
 	const { t } = useTranslation();
+	const activeLanguage = localStorage.getItem('currentLanguage') || 'es';
 
 	const playerUrl = `${API_BASE_URL}/players/${playerId}`;
 
@@ -140,7 +141,7 @@ export const PlayerDetailsPage = () => {
 						)}
 					</div>
 					<div className="player-bio | text-left">
-						<ParagraphBlock text={player?.bio?.es} />
+						<ParagraphBlock text={player?.bio?.[activeLanguage]} />
 					</div>
 				</section>
 				<section className="player-info-details | flex flex-col align-center">
@@ -161,9 +162,9 @@ export const PlayerDetailsPage = () => {
 							<span className="">{t('players.info.nationality')}: </span>
 						</p>
 						<p className="player-info-values | flex flex-col text-left">
-							<span className="">14 setembre 2003</span>
-							<span className="">Sant Pere de Vilamajor</span>
-							<span className="">Espanyol</span>
+							<span className="">{player.birthDay}</span>
+							<span className="">{player.birthPlace}</span>
+							<span className="">{t(`common.countries.${player.birthCountry}`)}</span>
 						</p>
 					</div>
 				</section>

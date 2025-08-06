@@ -6,6 +6,7 @@ export interface Player {
 	teamId: string;
 	birthDay: string;
 	birthPlace: string;
+	birthCountry: string;
 	isCurrentPlayer: boolean;
 	number?: number;
 	nickname?: string;
