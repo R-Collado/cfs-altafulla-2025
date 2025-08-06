@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { PrimaryNav } from './primary-nav';
 import { useNavbarScrollAnimation } from '@/utils/utilities/scroll';
+import { LanguageSelector } from './language-selector';
 // import { hideNavBar, showNavBar } from '@/animations/navbar';
 
 export const PrimaryHeader = () => {
@@ -14,11 +15,7 @@ export const PrimaryHeader = () => {
 				<Link to="/">Club Futsal Altafulla</Link>
 			</div>
 			<PrimaryNav />
-			<ul className="language-selector | flex">
-				<li>es</li>
-				<li>ca</li>
-				<li>en</li>
-			</ul>
+			<LanguageSelector />
 		</header>
 	);
 };
