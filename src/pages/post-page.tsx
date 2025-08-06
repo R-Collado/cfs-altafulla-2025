@@ -1,7 +1,11 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import ParagraphBlock from '@/utils/utilities/text';
 import dummyImg from '/images/ekko_balcony.jpg';
 import { RelatedArticle } from '@/components/related-article';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useRef } from 'react';
 
 const dummyPost = {
 	title: 'El equipo vuelve a ganar en casa tras una una mala racha',
@@ -34,26 +38,109 @@ Volver a ganar en casa es más que sumar tres puntos. Es volver a creer. En el p
 export const PostPage = () => {
 	const { t } = useTranslation();
 
+	const titleRef = useRef<HTMLDivElement>(null);
+	const authorRef = useRef<HTMLDivElement>(null);
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap.fromTo(
+		titleRef.current?.querySelector('.post-title'),
+		{ opacity: 0, y: 50 },
+		{
+			opacity: 1,
+			y: 0,
+			duration: 0.75,
+			delay: 0.2,
+			ease: 'power2.out',
+		},
+	);
+
+	gsap.fromTo(
+		titleRef.current?.querySelector('.post-tag'),
+		{ opacity: 0, y: 20 },
+		{
+			opacity: 1,
+			y: 0,
+			duration: 0.5,
+			delay: 0.4,
+			ease: 'power2.out',
+		},
+	);
+
+	gsap.fromTo(
+		authorRef.current?.querySelector('.author-name'),
+		{ opacity: 0, y: 20 },
+		{
+			opacity: 1,
+			y: 0,
+			duration: 0.5,
+			delay: 0.6,
+			ease: 'power2.out',
+		},
+	);
+
+	gsap.fromTo(
+		authorRef.current?.querySelector('.post-date'),
+		{ opacity: 0, y: 20 },
+		{
+			opacity: 1,
+			y: 0,
+			duration: 0.5,
+			delay: 0.8,
+			ease: 'power2.out',
+		},
+	);
+
+	gsap.fromTo(
+		authorRef.current?.querySelector('.author-image'),
+		{ opacity: 0 },
+		{
+			opacity: 1,
+			duration: 0.75,
+			delay: 1,
+			ease: 'power2.out',
+		},
+	);
+
+	useEffect(() => {
+		gsap.utils.toArray<HTMLElement>('.fade-in').forEach((el) => {
+			gsap.from(el, {
+				opacity: 0,
+				y: 30,
+				duration: 0.8,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: el,
+					start: 'top 50%', // tweak as needed
+					toggleActions: 'play none none none',
+					onEnter: () => {
+						gsap.to(el, { opacity: 1, y: 0, duration: 0.8 });
+					},
+				},
+			});
+		});
+	}, []);
+
 	return (
 		<section className="page-container post-page">
 			<header className="post-header | flex">
-				<div className="author-info | flex">
+				<div className="author-info | flex" ref={authorRef}>
 					<div className="details | flex ">
 						<p className="author-name">{dummyAuthor.name}</p>
 						<p className="post-date">{formatted}</p>
 					</div>
 					<img src={dummyAuthor.image} alt={dummyAuthor.name} className="author-image" />
 				</div>
-				<div>
+				<div className="post-info" ref={titleRef}>
 					<h2 className="post-title">{dummyPost.title}.</h2>
 					<p className="post-tag">{dummyPost.tag}</p>
 				</div>
 			</header>
 			<main className="post">
 				<header>
-					<ParagraphBlock text={text1} />
-					<img src={dummyPost.image} alt={dummyPost.title} className="post-image" />
-					<ParagraphBlock text={text2} />
+					<ParagraphBlock text={text1} className="fade-in" />
+					<img src={dummyPost.image} alt={dummyPost.title} className="post-image | fade-in" />
+					<ParagraphBlock text={text2} className="fade-in" />
 				</header>
 			</main>
 			<footer className="post-footer | text-center">

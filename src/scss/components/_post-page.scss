@@ -1,5 +1,6 @@
 @use "../abstracts/" as *;
 
+
 .post-page {
     padding-block: $size-12;
 
@@ -32,11 +33,13 @@
     }
 
     .post-header {
+        flex-direction: column-reverse;
         margin: 0 auto;
         max-width: max-content;
         position: relative;
         text-align: left;
         transform: translateX(-10%);
+
 
         .post-title {
             font-size: 2.8rem;
@@ -52,6 +55,7 @@
         }
 
         &::after {
+            animation: fadeIn .75s ease-in-out;
             background-color: $color-neutral-100;
             border-radius: 100vw;
             bottom: 32%;
@@ -61,6 +65,7 @@
             right: .5rem;
             transform: translateX(100%);
             width: 9rem;
+
         }
     }
 
@@ -102,20 +107,59 @@
             font-size: 1.5rem;
             margin-block: $size-12;
             position: relative;
-    
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .post-header {
+            flex-direction: row ;
+        }
+    }
+
+    @media ( max-width: 1024px) {
+
+        .post {
+            margin-inline: 1rem;
+        }
+
+        .post-header {
+            margin: 0 auto;
+            transform: translateX(0);
+
+            .post-info {
+                max-width: 80%;
+            }
+
+            .post-title {
+                font-size: 2.2rem;
+            }
+
             &::after {
-                background-color: $color-neutral-100;
-                border-radius: 100vw;
-                bottom: -50%;
-                content: '';
-                height: 0.2rem;
-                left: 50%;
-                position: absolute;
-                transform: translateX(-50%);
-                width: 10rem;
+                animation-duration: 0s;
+                opacity: 0;
+            }
+
+            .author-info .details {
+                align-items: start;
             }
         }
     }
-    
-   
+
+    @media (max-width: 768px) {
+
+    }
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
