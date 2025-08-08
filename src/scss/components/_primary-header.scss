@@ -11,6 +11,13 @@
     top: 0;
     width: 100vw;
     z-index: 999;
+
+
+    .team-logo {
+        cursor: pointer;
+        height: 2rem;
+        width: 2rem;
+    }
 }
 
 .primary-nav {
