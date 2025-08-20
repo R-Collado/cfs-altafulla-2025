@@ -1,28 +1,5 @@
 @use "../abstracts" as *;
 
-
-.players {
-    // gap: 1re
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0 auto;
-    place-items: center;
-
-    .players-by-role {
-
-        .players-role {
-            font-size: $size-7;
-            font-weight: 700;
-        }
-
-
-        .players-list {
-            gap: 2rem;
-            grid-template-columns: repeat(3, 1fr);
-            margin-block: 2rem 4rem;
-        }
-    }
-}
-
 .player-link{
     text-decoration: none;
 }
@@ -65,9 +42,14 @@
         }
 
         .player-img {
+            bottom: 0;
             filter: brightness(.8);
+            height: 100%;
+            left: 50%;
             margin: 0 auto;
-            max-height: 20rem;
+            object-fit: contain;
+            position: absolute;
+            translate: -50%;
             will-change: transform;
         }
     }

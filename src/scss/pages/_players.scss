@@ -10,4 +10,37 @@
         width: 100vw;
         z-index: 500;
     }
+
+    .players-by-role {
+        margin-inline: 5rem;
+        
+        .players-role {
+            font-size: $size-7;
+            font-weight: 700;
+        }
+
+        .players-list {
+            display: grid;
+            gap: 0;
+            gap: 1rem;
+            grid-template-columns: repeat(3, minmax(15rem, 1fr));
+            margin-inline: auto;
+
+            .player-link {
+                width: 100%;
+
+                .player-card {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: 900px) {
+                grid-template-columns: repeat(2, minmax(15rem, 1fr));
+            }
+
+            @media (max-width: 660px) {
+                grid-template-columns: repeat(1, minmax(15rem, 1fr));
+            }
+        }
+    }  
 }
