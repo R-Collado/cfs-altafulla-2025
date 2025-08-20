@@ -60,7 +60,7 @@ export const PlayersPage = () => {
 				return (
 					<div key={role} className="players-by-role">
 						<h2 className="players-role | uppercase">{t(`players.roles.plural.${role}`)}</h2>
-						<div className="players-list | grid">
+						<div className="players-list">
 							{playersByRole.map((player) => (
 								<PlayerCard key={player.id} player={player} />
 							))}

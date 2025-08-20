@@ -38,8 +38,8 @@ export const HomePage = () => {
 
 		tl.to(pulseRef.current, {
 			scale: 1,
-			width: '150vw',
-			height: '150vw',
+			width: '200vw',
+			height: '200vw',
 			duration: 0.5,
 			delay: 0.5,
 		});

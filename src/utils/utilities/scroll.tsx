@@ -1,4 +1,4 @@
-import { hideNavBar, showNavBar } from '@/animations/navbar';
+import { hideLanguageSelector, hideNavBar, showNavBar } from '@/animations/navbar';
 import { useEffect, useRef } from 'react';
 
 export const useNavbarScrollAnimation = () => {
@@ -12,6 +12,7 @@ export const useNavbarScrollAnimation = () => {
 
 			if (direction === 'down' && !isHidden.current) {
 				hideNavBar();
+				hideLanguageSelector();
 				isHidden.current = true;
 			} else if (direction === 'up' && isHidden.current) {
 				showNavBar();

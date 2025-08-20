@@ -37,4 +37,13 @@
     }
 
 
+    @media (max-width: 800px) {
+        gap: 1rem;
+
+        li a,
+        li p {
+            font-size: 0.9rem;
+        }
+    }
+
 }

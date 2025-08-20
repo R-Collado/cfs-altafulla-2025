@@ -14,7 +14,7 @@ export const KeeperCardStats = ({ player }: { player: Keeper }) => {
 			</section>
 			<section className="stat per-match">
 				<p className="stat-name | uppercase">{t('players.stats.cleanSheets')}</p>
-				<p className="stat-value">1</p>
+				<p className="stat-value">{player.seasonStats.cleanSheets}</p>
 			</section>
 		</>
 	);

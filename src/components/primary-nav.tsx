@@ -12,8 +12,11 @@ export const PrimaryNav = () => {
 			<li>
 				<Link to="/blog">News</Link>
 			</li>
-			<li>
+			{/* <li>
 				<Dropdown label={'Teams'} options={teamsOptions} />
+			</li> */}
+			<li>
+				<Link to="/male/players">Players</Link>
 			</li>
 			<li>
 				<Link to="#">Contact</Link>

@@ -17,3 +17,8 @@ export const showNavBar = () => {
 		duration: 0.5,
 	});
 };
+
+export const hideLanguageSelector = () => {
+	const languageList = document.querySelector('.language-list');
+	languageList?.classList.remove('open');
+};
