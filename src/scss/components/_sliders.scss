@@ -1,12 +1,15 @@
 @use "../abstracts" as *;
 
 .player-slider {
+    margin-right: 0 !important;
     user-select: none;
 
     .player-slide {
-        // background-color: red;
-        // height: 10rem;
-        width: min-content !important;
+        aspect-ratio: 1 / 1;
+
+        @media (min-width: 600px) {
+            width: min-content !important;
+        }
     }
 }
 

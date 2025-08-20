@@ -1,11 +1,49 @@
 @use '../abstracts/' as *;
 
+.home-overlay {
+    background-color: $color-primary-400;
+    inset: 0;
+    position: fixed;
+    z-index: 1000;
+
+    .home-overlay-circle {
+        border: 1px solid $color-neutral-900;
+        border-radius: 50%;
+        height: 10rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10rem;
+    }
+
+    .home-overlay-pulse {
+        background-color: $color-neutral-900;
+        border-radius: 50%;
+        height: 1rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1rem;
+    }
+}
+
 .home-page > section {
     padding-block: 4rem;
 }
 
 .hero {
     gap: 2rem;
+    position: relative;
+
+    .hero__slider__overlay {
+        background-color: $color-neutral-900;
+        height: 80%;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
 
     .posts-preview-slider {
         padding-inline: 10rem;
@@ -21,11 +59,10 @@
 }
 
 .matches-section {
-    flex-direction: column;
     width: 100vw;
 
     .match-section{
-        width: 100%;
+        width: 50%;
 
         &.next-match {
             position: relative;
@@ -35,11 +72,29 @@
                 right: 0;
                 top: -25%;
                 visibility: hidden;
-
-               
             }
-        } 
+        }
+
+        .match-section__match-list {
+            flex-direction: column;
+        }
     }
+
+    @media (min-width: 600px) {
+        .match-section {
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+
+
+
+            .match-section__match-list {
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
+    }
+
 
     @media (min-width: 1200px) {
         flex-direction: row ;

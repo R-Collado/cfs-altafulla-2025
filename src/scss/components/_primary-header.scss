@@ -24,10 +24,16 @@
     gap: 2rem;
     list-style: none;
 
-    li a {
-        color: $color-neutral-800;
+    li a,
+    li p {
+        color: $color-neutral-100;
         font-weight: 700;
         text-decoration: none;
+        transition: color 250ms ease-in-out;
+
+        &:hover {
+            color: $color-primary-400;
+        }
     }
 
 

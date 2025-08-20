@@ -7,19 +7,20 @@
 		"send": "Enviar",
 		"readMore": "Llegir Més",
 		"countries": {
-			"es": "Espanya"
+			"es": "Espanya",
+			"ma": "Marroc"
 		}
 	},
 	"players": {
 		"ourPlayers": "Els Nostres Jugadors",
 		"roles": {
 			"keeper": "Porter",
-			"defender": "Defensa",
+			"defender": "Tanca",
 			"winger": "Ala",
 			"pivot": "Pivot",
 			"plural": {
 				"keeper": "Porters",
-				"defender": "Defenses",
+				"defender": "Tanques",
 				"winger": "Alas",
 				"pivot": "Pivots"
 			}

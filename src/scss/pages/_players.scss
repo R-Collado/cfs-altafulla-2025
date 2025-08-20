@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.page-container.players {
+    position: relative;
+
+    .overlay {
+        background-color: $color-neutral-900;
+        height: 100vh;
+        position: absolute;
+        width: 100vw;
+        z-index: 500;
+    }
+}

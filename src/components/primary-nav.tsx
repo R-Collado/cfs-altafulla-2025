@@ -5,7 +5,6 @@ export const PrimaryNav = () => {
 	const teamsOptions = [
 		{ label: 'Primer Equip Masculí', value: 'male' },
 		{ label: 'Primer Equip Femení', value: 'fem' },
-		{ label: 'Equip Juvenil Masculí', value: 'mascjuv' },
 	];
 
 	return (
@@ -13,9 +12,6 @@ export const PrimaryNav = () => {
 			<li>
 				<Link to="/blog">News</Link>
 			</li>
-			{/* <li>
-				<Link to="/players">Players</Link>
-			</li> */}
 			<li>
 				<Dropdown label={'Teams'} options={teamsOptions} />
 			</li>

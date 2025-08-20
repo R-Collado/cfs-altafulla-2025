@@ -19,6 +19,8 @@ export const PlayerSlider = () => {
 			.catch((error) => console.error('Error fetching players:', error));
 	}, []);
 
+	sortPlayersByStats(players);
+
 	return (
 		<Swiper
 			modules={[Navigation, Pagination]}
@@ -34,4 +36,15 @@ export const PlayerSlider = () => {
 			))}
 		</Swiper>
 	);
+};
+
+const sortPlayersByStats = (players: any) => {
+	players.sort((a: any, b: any) => {
+		const aScore = a.seasonStats.goals || a.seasonStats.saves + a.seasonStats.assists * 0.5;
+		const bScore = b.seasonStats.goals || b.seasonStats.saves + b.seasonStats.assists * 0.5;
+
+		console.log('scores', a.seasonStats.goals, a.seasonStats.assists);
+	});
+
+	return players;
 };

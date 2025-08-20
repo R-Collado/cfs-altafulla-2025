@@ -7,7 +7,8 @@
 		"send": "Send",
 		"readMore": "Read More",
 		"countries": {
-			"es": "Spain"
+			"es": "Spain",
+			"ma": "Morocco"
 		}
 	},
 	"players": {

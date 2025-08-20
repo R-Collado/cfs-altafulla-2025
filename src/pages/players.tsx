@@ -1,9 +1,11 @@
 import { PlayerCard } from '@/components/player-card';
 import { FieldPlayer, Keeper } from '@/types/player';
 import { getTeamByUrl } from '@/utils/utilities/url';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router';
+import gsap from 'gsap';
+import { CustomEase } from 'gsap/CustomEase';
 
 const USE_LOCAL = true;
 
@@ -17,9 +19,13 @@ export const PlayersPage = () => {
 
 	const [players, setPlayers] = useState<FieldPlayer[] | Keeper[]>([]);
 	const [loading, setLoading] = useState(true);
+	const overlayRef = useRef<HTMLDivElement>(null);
 	const teamId = getTeamByUrl(window.location.href);
 
 	const teamUrl = `${API_BASE_URL}/teams/${teamId}/players`;
+
+	gsap.registerPlugin(CustomEase);
+	CustomEase.create('easing-animation', '.97,.27,.15,.74');
 
 	useEffect(() => {
 		fetch(teamUrl)
@@ -30,11 +36,23 @@ export const PlayersPage = () => {
 			});
 	}, [location]);
 
+	useEffect(() => {
+		if (loading) return;
+
+		gsap.to(overlayRef.current, {
+			y: '-100%',
+			duration: 0.25,
+			ease: 'easing-animation',
+			delay: 1,
+		});
+	}, [loading]);
+
 	if (loading) return <p>Loading players...</p>;
 	if (!players || players.length === 0) return <p>No players found.</p>;
 
 	return (
 		<section className="page-container players">
+			<div className="overlay" ref={overlayRef}></div>
 			{availableRoles.map((role) => {
 				const playersByRole = players.filter((player) => player.role === role);
 				if (playersByRole.length === 0) return null;

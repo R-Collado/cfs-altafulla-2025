@@ -54,8 +54,7 @@
             text-transform: uppercase;
         }
 
-        &::after {
-            animation: fadeIn .75s ease-in-out;
+        .line {
             background-color: $color-neutral-100;
             border-radius: 100vw;
             bottom: 32%;
@@ -143,23 +142,24 @@
                 align-items: start;
             }
         }
+        
+        .post-footer {
+            display: none;
+        }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 768px) { 
+
+        .post {
+            margin: .5rem;
+
+            p {
+                margin-inline: 1rem;
+            }
+        }
+
+      
 
     }
 
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    50%{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
