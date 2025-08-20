@@ -15,4 +15,9 @@
         position: absolute;
         width: 100vw
     }
+
+    @media (max-width: 450px) {
+        grid-template-columns: repeat(auto-fit, 20rem);
+        justify-content: center;
+    }
 }
