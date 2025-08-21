@@ -1,6 +1,6 @@
 import { hideNavBar } from '@/animations/navbar';
 import { useEffect, useRef, useState } from 'react';
-import { API_BASE_URL } from './players';
+import { API_BASE_URL } from '@utils/utilities/config';
 import { useParams } from 'react-router';
 import { FieldPlayer, Keeper } from '@/types/player';
 import { FieldPlayerDetailsStats, KeeperDetailsStats } from '@/components/role-details-stats';

@@ -6,10 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router';
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
-
-const USE_LOCAL = true;
-
-export const API_BASE_URL = USE_LOCAL ? 'http://localhost:3001' : 'https://cfs-altafulla-backend.onrender.com';
+import { API_BASE_URL } from '@/utils/utilities/config';
 
 const availableRoles = ['keeper', 'defender', 'winger', 'pivot'] as const;
 
@@ -65,8 +62,6 @@ export const PlayersPage = () => {
 					if (b.number) return 1; // b has number, a does not
 					return 0; // neither has number, maintain original order
 				});
-
-				console.log(playersSorted);
 
 				return (
 					<div key={role} className="players-by-role">
