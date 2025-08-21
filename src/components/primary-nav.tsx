@@ -1,28 +1,25 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import { Dropdown } from './dropdown';
 
 export const PrimaryNav = () => {
-	const teamsOptions = [
-		{ label: 'Primer Equip Masculí', value: 'male' },
-		{ label: 'Primer Equip Femení', value: 'fem' },
-	];
+	const { t } = useTranslation();
 
 	return (
 		<nav className="primary-nav | flex  content-center align-center">
 			<li>
-				<Link to="/blog">News</Link>
+				<Link to="/blog">{t('common.nav.blog')}</Link>
 			</li>
 			{/* <li>
 				<Dropdown label={'Teams'} options={teamsOptions} />
 			</li> */}
 			<li>
-				<Link to="/male/players">Players</Link>
+				<Link to="/male/players">{t('common.nav.players')}</Link>
 			</li>
 			<li>
-				<Link to="#">Contact</Link>
+				<Link to="#">{t('common.nav.contact')}</Link>
 			</li>
 			<li>
-				<Link to="#">Partners</Link>
+				<Link to="#">{t('common.nav.partners')}</Link>
 			</li>
 		</nav>
 	);
