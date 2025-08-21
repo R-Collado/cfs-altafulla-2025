@@ -9,6 +9,14 @@
 		"countries": {
 			"es": "Spain",
 			"ma": "Morocco"
+		},
+		"nav": {
+			"home": "Home",
+			"blog": "Blog",
+			"players": "Players",
+			"teams": "Teams",
+			"contact": "Contact",
+			"partners": "Partners"
 		}
 	},
 	"players": {

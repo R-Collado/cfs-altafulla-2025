@@ -57,6 +57,17 @@ export const PlayersPage = () => {
 				const playersByRole = players.filter((player) => player.role === role);
 				if (playersByRole.length === 0) return null;
 
+				const playersSorted = playersByRole.sort((a, b) => {
+					if (a.number && b.number) {
+						return a.number - b.number;
+					}
+					if (a.number) return -1; // a has number, b does not
+					if (b.number) return 1; // b has number, a does not
+					return 0; // neither has number, maintain original order
+				});
+
+				console.log(playersSorted);
+
 				return (
 					<div key={role} className="players-by-role">
 						<h2 className="players-role | uppercase">{t(`players.roles.plural.${role}`)}</h2>

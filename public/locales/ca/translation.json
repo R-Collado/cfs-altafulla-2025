@@ -9,6 +9,14 @@
 		"countries": {
 			"es": "Espanya",
 			"ma": "Marroc"
+		},
+		"nav": {
+			"home": "Inici",
+			"blog": "Bloc",
+			"players": "Jugadors",
+			"teams": "Equips",
+			"contact": "Contacte",
+			"partners": "Col·laboradors"
 		}
 	},
 	"players": {

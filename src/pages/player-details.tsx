@@ -133,7 +133,7 @@ export const PlayerDetailsPage = () => {
 			<div className="page-container | relative flex">
 				<p className="player-nickname | uppercase">{player?.nickname || player.firstName}</p>
 				<section className="player-stats_and_bio">
-					<div className="player-stats | flex  ">
+					<div className="player-stats-list | flex  ">
 						{player?.role === 'keeper' ? (
 							<KeeperDetailsStats player={player as Keeper} />
 						) : (

@@ -7,7 +7,8 @@
 .player-details {
     background-color: $color-neutral-900;
     color: $color-neutral-100;
-    min-height: 100vh;    
+    min-height: 100vh;
+    overflow: hidden;    
     width: 100vw;
     
     .page-container {
@@ -27,7 +28,8 @@
         position: absolute;
         text-align: center;
         top: -8%;
-        transform: translateX(-50%); 
+        transform: translateX(-50%);
+        user-select: none; 
         z-index: -1;
     }
 
@@ -61,7 +63,7 @@
                     background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, $color-primary-400 100%);
                     background-clip: text;
                     color: transparent;
-                    font-size: 10rem;
+                    font-size: 10vw;
                     font-weight: 700;
                     line-height: 1;
 
@@ -76,6 +78,7 @@
         .player-image {
             filter: brightness(0.8);
             max-width: 30rem;
+            width: 30vw;
         }
 
         .player-info {
@@ -113,4 +116,62 @@
     }
 
    
+
+    @media (max-width: 868px) {
+
+        .page-container {
+            align-items: center;
+            flex-direction: column-reverse;
+            justify-content: center;
+            
+            .player-stats_and_bio  {
+
+               .player-stats{
+                margin-block: 2rem -1rem;
+                margin-inline: auto;
+
+                    .player-stat {
+                        
+                        .value {
+                            font-size: 8rem;
+                        }
+                    }
+               }
+            }
+
+
+            .player-info-details  {
+                margin-left: 0;
+
+                .player-image {
+                    max-width: 20rem;
+                    width: 50vw;
+                }
+
+                .player-info {
+                    gap: 2rem;
+
+                    .player-number {
+                        font-size: 6rem;
+                    }
+
+                    .player-name {
+                        font-size: 3rem;
+                    }
+
+                    .player-role {
+                        font-size: 2rem
+                    }
+                }
+
+                .player-birth-details {
+
+                    .player-info-names,
+                    .player-info-values {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    } 
 }

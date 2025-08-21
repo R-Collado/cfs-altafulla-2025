@@ -9,6 +9,14 @@
 		"countries": {
 			"es": "España",
 			"ma": "Marruecos"
+		},
+		"nav": {
+			"home": "Inicio",
+			"blog": "Blog",
+			"players": "Jugadores",
+			"teams": "Equipos",
+			"contact": "Contacto",
+			"partners": "Colaboradores"
 		}
 	},
 	"players": {
