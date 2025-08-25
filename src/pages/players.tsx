@@ -20,6 +20,7 @@ export const PlayersPage = () => {
 	const teamId = getTeamByUrl(window.location.href);
 
 	const teamUrl = `${API_BASE_URL}/teams/${teamId}/players`;
+	console.log('Fetching players from:', teamUrl);
 
 	gsap.registerPlugin(CustomEase);
 	CustomEase.create('easing-animation', '.97,.27,.15,.74');

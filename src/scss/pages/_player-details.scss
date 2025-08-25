@@ -174,4 +174,31 @@
             }
         }
     } 
+
+    @media (max-width: 630px) {
+
+        .page-container {
+
+            
+             .player-stats_and_bio .player-stats .player-stat .value {
+                font-size: 15vw;
+             }
+
+             .player-stats_and_bio .player-bio {
+                 margin-inline: 1rem;
+                 text-align: center;
+             }
+
+             .player-info-details {
+                .player-birth-details {
+
+                    .player-info-names,
+                    .player-info-values {
+                        font-size: 1.2rem;
+                    }
+                }
+             }
+        }
+   
+    } 
 }
