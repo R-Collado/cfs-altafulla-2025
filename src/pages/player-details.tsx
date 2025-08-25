@@ -16,7 +16,13 @@ export const PlayerDetailsPage = () => {
 
 	const playerUrl = `${API_BASE_URL}/players/${playerId}`;
 
+	// refs for animations
+	const statsRef = useRef<HTMLDivElement>(null);
 	const imageRef = useRef<HTMLImageElement>(null);
+	const nicknameRef = useRef<HTMLParagraphElement>(null);
+	const infoRef = useRef<HTMLDivElement>(null);
+	const birthDetailsRef = useRef<HTMLDivElement>(null);
+	const bioRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		hideNavBar();
@@ -31,7 +37,7 @@ export const PlayerDetailsPage = () => {
 	const tl = gsap.timeline({ paused: true });
 
 	tl.fromTo(
-		'.player-image',
+		imageRef.current,
 		{
 			yPercent: 1.5,
 			opacity: 0,
@@ -45,7 +51,7 @@ export const PlayerDetailsPage = () => {
 	);
 
 	tl.fromTo(
-		'.player-nickname',
+		nicknameRef.current,
 		{
 			opacity: 0,
 			yPercent: 10,
@@ -62,7 +68,7 @@ export const PlayerDetailsPage = () => {
 	);
 
 	tl.fromTo(
-		'.player-info',
+		infoRef.current,
 		{
 			opacity: 0,
 			yPercent: 10,
@@ -77,7 +83,7 @@ export const PlayerDetailsPage = () => {
 	);
 
 	tl.fromTo(
-		'.player-birth-details',
+		birthDetailsRef.current,
 		{
 			opacity: 0,
 			yPercent: 10,
@@ -91,7 +97,7 @@ export const PlayerDetailsPage = () => {
 	);
 
 	tl.fromTo(
-		'.player-stats',
+		statsRef.current,
 		{
 			opacity: 0,
 			yPercent: 10,
@@ -106,7 +112,7 @@ export const PlayerDetailsPage = () => {
 	);
 
 	tl.fromTo(
-		'.player-bio',
+		bioRef.current,
 		{
 			opacity: 0,
 			yPercent: 10,
@@ -131,22 +137,24 @@ export const PlayerDetailsPage = () => {
 	return (
 		<section className="player-details">
 			<div className="page-container | relative flex">
-				<p className="player-nickname | uppercase">{player?.nickname || player.firstName}</p>
+				<p className="player-nickname | uppercase" ref={nicknameRef}>
+					{player?.nickname || player.firstName}
+				</p>
 				<section className="player-stats_and_bio">
 					<div className="player-stats-list | flex  ">
 						{player?.role === 'keeper' ? (
-							<KeeperDetailsStats player={player as Keeper} />
+							<KeeperDetailsStats player={player as Keeper} ref={statsRef} />
 						) : (
-							<FieldPlayerDetailsStats player={player as FieldPlayer} />
+							<FieldPlayerDetailsStats player={player as FieldPlayer} ref={statsRef} />
 						)}
 					</div>
-					<div className="player-bio | text-left">
+					<div className="player-bio | text-left" ref={bioRef}>
 						<ParagraphBlock text={player?.bio?.[activeLanguage]} />
 					</div>
 				</section>
 				<section className="player-info-details | flex flex-col align-center">
 					<img ref={imageRef} className="player-image" src={player?.photoUrl} alt={player?.firstName} />
-					<div className="player-info | flex align-center">
+					<div className="player-info | flex align-center" ref={infoRef}>
 						<p className="player-number">{player?.number}</p>
 						<div className="player-name_and_role">
 							<p className="player-name">
@@ -155,7 +163,7 @@ export const PlayerDetailsPage = () => {
 							<p className="player-role | uppercase">{t(`players.roles.${player?.role}`)}</p>
 						</div>
 					</div>
-					<div className="player-birth-details | flex">
+					<div className="player-birth-details | flex" ref={birthDetailsRef}>
 						<p className="player-info-names | flex flex-col text-right">
 							<span className="">{t('players.info.birthdate')}: </span>
 							<span className="">{t('players.info.birthplace')}: </span>
