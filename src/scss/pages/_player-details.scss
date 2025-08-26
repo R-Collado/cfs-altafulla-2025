@@ -10,6 +10,7 @@
     min-height: 100vh;
     overflow: hidden;    
     width: 100vw;
+
     
     .page-container {
         padding: 5rem 5rem;
@@ -25,6 +26,7 @@
         font-style: italic;
         font-weight: 900;
         left: 50%;
+        // opacity: 0;
         position: absolute;
         text-align: center;
         top: -8%;
@@ -87,7 +89,7 @@
             .player-number {
                 font-size: 4rem;
                 font-weight: 600;
-            }
+          }
 
             .player-name {
                 font-size: 1.5rem;

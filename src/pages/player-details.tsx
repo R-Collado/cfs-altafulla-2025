@@ -1,5 +1,4 @@
-import { hideNavBar } from '@/animations/navbar';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { API_BASE_URL } from '@utils/utilities/config';
 import { useParams } from 'react-router';
 import { FieldPlayer, Keeper } from '@/types/player';
@@ -15,18 +14,9 @@ export const PlayerDetailsPage = () => {
 	const activeLanguage = localStorage.getItem('currentLanguage') || 'es';
 
 	const playerUrl = `${API_BASE_URL}/players/${playerId}`;
-
-	// refs for animations
-	const statsRef = useRef<HTMLDivElement>(null);
-	const imageRef = useRef<HTMLImageElement>(null);
-	const nicknameRef = useRef<HTMLParagraphElement>(null);
-	const infoRef = useRef<HTMLDivElement>(null);
-	const birthDetailsRef = useRef<HTMLDivElement>(null);
-	const bioRef = useRef<HTMLDivElement>(null);
+	const playerDetailsRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		hideNavBar();
-
 		fetch(playerUrl)
 			.then((res) => res.json())
 			.then((data) => {
@@ -34,127 +24,112 @@ export const PlayerDetailsPage = () => {
 			});
 	}, []);
 
-	const tl = gsap.timeline({ paused: true });
+	useLayoutEffect(() => {
+		if (!playerDetailsRef.current) return;
 
-	tl.fromTo(
-		imageRef.current,
-		{
-			yPercent: 1.5,
-			opacity: 0,
-		},
-		{
-			yPercent: 0,
-			opacity: 1,
-			duration: 0.5,
-		},
-		'1',
-	);
+		const ctx = gsap.context(() => {
+			const tl = gsap.timeline();
 
-	tl.fromTo(
-		nicknameRef.current,
-		{
-			opacity: 0,
-			yPercent: 10,
-			xPercent: -50,
-		},
-		{
-			opacity: 1,
-			yPercent: 0,
-			xPercent: -50,
-			duration: 1,
-			delay: 0.25,
-		},
-		'1',
-	);
+			tl.fromTo(
+				'.player-image',
+				{
+					yPercent: 1.5,
+					opacity: 0,
+				},
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 0.5,
+				},
+				'1',
+			);
 
-	tl.fromTo(
-		infoRef.current,
-		{
-			opacity: 0,
-			yPercent: 10,
-		},
-		{
-			opacity: 1,
-			yPercent: 0,
-			duration: 0.25,
-			delay: 0.5,
-		},
-		'1',
-	);
+			tl.fromTo(
+				'.player-nickname',
+				{
+					opacity: 0,
+					yPercent: 10,
+					xPercent: -50,
+				},
+				{
+					opacity: 1,
+					yPercent: 0,
+					xPercent: -50,
+					duration: 1,
+					delay: 0.25,
+				},
+				'1',
+			);
 
-	tl.fromTo(
-		birthDetailsRef.current,
-		{
-			opacity: 0,
-			yPercent: 10,
-		},
-		{
-			opacity: 1,
-			yPercent: 0,
-			duration: 0.25,
-		},
-		'1',
-	);
+			tl.fromTo(
+				'.player-info',
+				{
+					opacity: 0,
+					yPercent: 10,
+				},
+				{
+					opacity: 1,
+					yPercent: 0,
+					duration: 0.25,
+					delay: 0.5,
+				},
+				'1',
+			);
 
-	tl.fromTo(
-		statsRef.current,
-		{
-			opacity: 0,
-			yPercent: 10,
-		},
-		{
-			opacity: 1,
-			yPercent: 0,
-			duration: 0.5,
-			delay: 0.35,
-		},
-		'1',
-	);
+			tl.fromTo(
+				'.player-birth-details',
+				{
+					opacity: 0,
+					yPercent: 10,
+				},
+				{
+					opacity: 1,
+					yPercent: 0,
+					duration: 0.25,
+				},
+				'1',
+			);
 
-	tl.fromTo(
-		bioRef.current,
-		{
-			opacity: 0,
-			yPercent: 10,
-		},
-		{
-			opacity: 1,
-			yPercent: 0,
-			duration: 0.5,
-			delay: 0.45,
-		},
-		'1',
-	);
+			tl.fromTo(
+				'.player-bio',
+				{
+					opacity: 0,
+					yPercent: 10,
+				},
+				{
+					opacity: 1,
+					yPercent: 0,
+					duration: 0.5,
+					delay: 0.45,
+				},
+				'1',
+			);
+		}, playerDetailsRef.current);
 
-	setTimeout(() => {
-		tl.play();
-	}, 100);
-
-	useEffect(() => {}, []);
+		return () => ctx.revert();
+	}, [player]);
 
 	if (!player) return <p>Loading...</p>;
 
 	return (
 		<section className="player-details">
-			<div className="page-container | relative flex">
-				<p className="player-nickname | uppercase" ref={nicknameRef}>
-					{player?.nickname || player.firstName}
-				</p>
+			<div className="page-container | relative flex" ref={playerDetailsRef}>
+				<p className="player-nickname | uppercase">{player?.nickname || player.firstName}</p>
 				<section className="player-stats_and_bio">
 					<div className="player-stats-list | flex  ">
 						{player?.role === 'keeper' ? (
-							<KeeperDetailsStats player={player as Keeper} ref={statsRef} />
+							<KeeperDetailsStats player={player as Keeper} />
 						) : (
-							<FieldPlayerDetailsStats player={player as FieldPlayer} ref={statsRef} />
+							<FieldPlayerDetailsStats player={player as FieldPlayer} />
 						)}
 					</div>
-					<div className="player-bio | text-left" ref={bioRef}>
+					<div className="player-bio | text-left">
 						<ParagraphBlock text={player?.bio?.[activeLanguage]} />
 					</div>
 				</section>
 				<section className="player-info-details | flex flex-col align-center">
-					<img ref={imageRef} className="player-image" src={player?.photoUrl} alt={player?.firstName} />
-					<div className="player-info | flex align-center" ref={infoRef}>
+					<img className="player-image" src={player?.photoUrl} alt={player?.firstName} />
+					<div className="player-info | flex align-center">
 						<p className="player-number">{player?.number}</p>
 						<div className="player-name_and_role">
 							<p className="player-name">
@@ -163,7 +138,7 @@ export const PlayerDetailsPage = () => {
 							<p className="player-role | uppercase">{t(`players.roles.${player?.role}`)}</p>
 						</div>
 					</div>
-					<div className="player-birth-details | flex" ref={birthDetailsRef}>
+					<div className="player-birth-details | flex">
 						<p className="player-info-names | flex flex-col text-right">
 							<span className="">{t('players.info.birthdate')}: </span>
 							<span className="">{t('players.info.birthplace')}: </span>
