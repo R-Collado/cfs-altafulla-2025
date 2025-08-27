@@ -28,7 +28,6 @@ export const PostPage = () => {
 			.then((res) => res.json())
 			.then((data) => {
 				setPost(data);
-				console.log(post);
 			});
 	}, []);
 
@@ -36,7 +35,7 @@ export const PostPage = () => {
 		if (!postRef.current) return;
 
 		const ctx = gsap.context(() => {
-			gsap.utils.toArray<HTMLElement>('.fade-in').forEach((el) => {
+			gsap.utils.toArray<HTMLElement>('.fade-in:not(:first-of-type)').forEach((el) => {
 				gsap.from(el, {
 					opacity: 0,
 					y: 30,
@@ -125,6 +124,18 @@ export const PostPage = () => {
 					duration: 0.75,
 					delay: 1.2,
 					ease: 'power2.out',
+				},
+			);
+
+			gsap.fromTo(
+				'.fade-in:first-of-type',
+				{ opacity: 0, y: 30 },
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.8,
+					ease: 'power2.out',
+					delay: 1.4,
 				},
 			);
 		}, postRef);
