@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import playerBg from '/images/player-bg/player-bg-1.svg';
 
 import { gsap } from 'gsap';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { KeeperCardStats } from './keeper-card-stats';
 import { PlayerCardStats } from './player-card-stats';
 import { Link } from 'react-router';
@@ -15,54 +15,53 @@ type PlayerProps = {
 export const PlayerCard = ({ player }: PlayerProps) => {
 	const { t } = useTranslation();
 	const playerCardRef = useRef(null);
-
 	const tl = gsap.timeline().pause();
 
-	const playerCard = playerCardRef.current;
-	const playerName = playerCard?.querySelector('.player-name');
-	const playerNumber = playerCard?.querySelector('.player-number');
-	const playerRole = playerCard?.querySelector('.player-role');
-	const playerStats = playerCard?.querySelector('.player-stats');
-	const playerImg = playerCard?.querySelector('.player-img');
+	useLayoutEffect(() => {
+		if (!playerCardRef.current) return;
 
-	tl.to(
-		playerName,
-		{
-			yPercent: -100,
-			duration: 0.45,
-			position: 1,
-		},
-		'start', // start of the timeline (can be any label),
-	);
+		const ctx = gsap.context(() => {
+			tl.to(
+				'.player-name',
+				{
+					yPercent: -100,
+					duration: 0.45,
+				},
+				'start',
+			);
 
-	tl.to(
-		playerNumber,
-		{
-			yPercent: -35,
-			duration: 0.45,
-		},
-		'start',
-	);
+			tl.to(
+				'.player-number',
+				{
+					yPercent: -35,
+					duration: 0.45,
+				},
+				'start',
+			);
 
-	tl.to(
-		playerStats,
-		{
-			opacity: 1,
-			duration: 0.45,
-			y: -20,
-		},
-		'start',
-	);
+			tl.to(
+				'.player-stats',
+				{
+					opacity: 1,
+					duration: 0.45,
+					y: -20,
+				},
+				'start',
+			);
 
-	tl.to(
-		playerImg,
-		{
-			scale: 1.05,
-			filter: 'brightness(0.5) blur(2px)',
-			duration: 0.45,
-		},
-		'start',
-	);
+			tl.to(
+				'.player-img',
+				{
+					scale: 1.05,
+					filter: 'brightness(0.5) blur(2px)',
+					duration: 0.45,
+				},
+				'start',
+			);
+		}, playerCardRef);
+
+		return () => ctx.revert();
+	});
 
 	const handleMouseEnter = () => {
 		tl.play();
@@ -73,7 +72,7 @@ export const PlayerCard = ({ player }: PlayerProps) => {
 	};
 
 	return (
-		<Link to={`/${player.teamId}/players/${player.id}`} className="player-link">
+		<Link to={`/${player.teamId}/players/${player.id}`} className="player-link" ref={playerCardRef}>
 			<article
 				className="player-card | pointer flex flex-col content-end"
 				ref={playerCardRef}

@@ -1,29 +1,21 @@
 import { PlayerCard } from '@/components/player-card';
 import { FieldPlayer, Keeper } from '@/types/player';
 import { getTeamByUrl } from '@/utils/utilities/url';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router';
 import gsap from 'gsap';
-import { CustomEase } from 'gsap/CustomEase';
 import { API_BASE_URL } from '@/utils/utilities/config';
 
 const availableRoles = ['keeper', 'defender', 'winger', 'pivot'] as const;
 
 export const PlayersPage = () => {
 	const { t } = useTranslation();
-	const location = useLocation();
-
 	const [players, setPlayers] = useState<FieldPlayer[] | Keeper[]>([]);
 	const [loading, setLoading] = useState(true);
 	const overlayRef = useRef<HTMLDivElement>(null);
 	const teamId = getTeamByUrl(window.location.href);
 
 	const teamUrl = `${API_BASE_URL}/teams/${teamId}/players`;
-	console.log('Fetching players from:', teamUrl);
-
-	gsap.registerPlugin(CustomEase);
-	CustomEase.create('easing-animation', '.97,.27,.15,.74');
 
 	useEffect(() => {
 		fetch(teamUrl)
@@ -32,15 +24,16 @@ export const PlayersPage = () => {
 				setPlayers(data);
 				setLoading(false);
 			});
-	}, [location]);
+	}, []);
+
+	useLayoutEffect(() => {});
 
 	useEffect(() => {
 		if (loading) return;
 
 		gsap.to(overlayRef.current, {
 			y: '-100%',
-			duration: 0.25,
-			ease: 'easing-animation',
+			duration: 0.5,
 			delay: 1,
 		});
 	}, [loading]);
@@ -68,7 +61,7 @@ export const PlayersPage = () => {
 					<div key={role} className="players-by-role">
 						<h2 className="players-role | uppercase">{t(`players.roles.plural.${role}`)}</h2>
 						<div className="players-list">
-							{playersByRole.map((player) => (
+							{playersSorted.map((player) => (
 								<PlayerCard key={player.id} player={player} />
 							))}
 						</div>
