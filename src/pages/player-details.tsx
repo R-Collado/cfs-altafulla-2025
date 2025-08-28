@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 export const PlayerDetailsPage = () => {
 	const { playerId } = useParams();
 	const [player, setPlayer] = useState<FieldPlayer | Keeper>();
-	const { t } = useTranslation();
-	const activeLanguage = localStorage.getItem('currentLanguage') || 'es';
+	const { i18n, t } = useTranslation();
+	const activeLanguage = i18n.language as 'ca' | 'es' | 'en';
 
 	const playerUrl = `${API_BASE_URL}/players/${playerId}`;
 	const playerDetailsRef = useRef<HTMLDivElement>(null);
