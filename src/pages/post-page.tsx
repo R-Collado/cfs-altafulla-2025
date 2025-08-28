@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import dummyImage1 from '@images/dummy-post-1.png';
 
 import ParagraphBlock from '@/utils/utilities/text';
-// import { RelatedArticle } from '@/components/related-article';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { API_BASE_URL } from '@/utils/utilities/config';
@@ -12,7 +11,7 @@ import { useParams } from 'react-router';
 import { Post } from '@/types/post';
 
 export const PostPage = () => {
-	const { i18n, t } = useTranslation();
+	const { i18n } = useTranslation();
 
 	const { postId } = useParams();
 	const [post, setPost] = useState<Post>();
@@ -35,7 +34,7 @@ export const PostPage = () => {
 		if (!postRef.current) return;
 
 		const ctx = gsap.context(() => {
-			gsap.utils.toArray<HTMLElement>('.fade-in:not(:first-of-type)').forEach((el) => {
+			gsap.utils.toArray<HTMLElement>('.post .fade-in:not(:first-child)').forEach((el) => {
 				gsap.from(el, {
 					opacity: 0,
 					y: 30,
@@ -128,7 +127,7 @@ export const PostPage = () => {
 			);
 
 			gsap.fromTo(
-				'.fade-in:first-of-type',
+				'p.fade-in:first-of-type',
 				{ opacity: 0, y: 30 },
 				{
 					opacity: 1,
@@ -162,20 +161,10 @@ export const PostPage = () => {
 				<div className="line"></div>
 			</header>
 			<main className="post">
-				<header>
-					<ParagraphBlock text={post.translations[activeLanguage].bodyTop} className="fade-in" />
-					<img src={post.image} alt={post.translations[activeLanguage].title} className="post-image | fade-in" />
-					<ParagraphBlock text={post.translations[activeLanguage].bodyBottom} className="fade-in" />
-				</header>
+				<ParagraphBlock text={post.translations[activeLanguage].bodyTop} className="fade-in" />
+				<img src={post.image} alt={post.translations[activeLanguage].title} className="post-image fade-in" />
+				<ParagraphBlock text={post.translations[activeLanguage].bodyBottom} className="fade-in" />
 			</main>
-			{/* <footer className="post-footer | text-center">
-				<h3>{t('blog.relatedPosts')}</h3>
-				<div className="related-posts | flex">
-					<RelatedArticle title={post.translations['ca'].title} image={post.image} date={post.date.toISOString()} />
-					<RelatedArticle title={post.translations['ca'].title} image={post.image} date={post.date.toISOString()} />
-					<RelatedArticle title={post.translations['ca'].title} image={post.image} date={post.date.toISOString()} />
-				</div>
-			</footer> */}
 		</section>
 	);
 };

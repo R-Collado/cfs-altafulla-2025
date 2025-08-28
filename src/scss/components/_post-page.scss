@@ -65,6 +65,10 @@
             transform: translateX(100%);
             width: 9rem;
 
+
+            @media (max-width: 818px) {
+                display: none;
+            }
         }
     }
 
@@ -149,6 +153,11 @@
     }
 
     @media (max-width: 768px) { 
+
+
+        .post-header {
+            margin-inline: 2rem;
+        }
 
         .post {
             margin: .5rem;
