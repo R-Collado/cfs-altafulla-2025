@@ -11,8 +11,9 @@ interface Props {
 	type?: 'small' | 'large';
 }
 export const HomePostPreview = ({ post, type = 'small' }: Props) => {
-	const { title, bodyTop, date, image, tag } = post;
-	const { t } = useTranslation();
+	const { translations, date, image, tag } = post;
+	const { i18n, t } = useTranslation();
+	const lang = i18n.language as 'ca' | 'es' | 'en';
 
 	const onPreviewClick = () => {
 		location.href = `/blog/${post.id}`;
@@ -24,11 +25,11 @@ export const HomePostPreview = ({ post, type = 'small' }: Props) => {
 				<img className="post-img | pointer" src={image} alt="" onClick={onPreviewClick} />
 			</div>
 			<div className="post-info">
-				<PostTag tag={tag} />
+				<PostTag tag={tag[lang]} />
 				<p className="post-date">{formatBlogPostDate(date)}</p>
 			</div>
-			<h2 className="post-title | text-left">{title}</h2>
-			<p className="post-excerpt | text-left">{truncateText(bodyTop, 100)}</p>
+			<h2 className="post-title | text-left">{translations[lang].title}</h2>
+			<p className="post-excerpt | text-left">{truncateText(translations[lang].bodyTop, 100)}</p>
 			<button className="btn-read-more | uppercase pointer">{t('common.readMore')}</button>
 		</article>
 	);

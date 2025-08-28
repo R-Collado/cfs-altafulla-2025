@@ -95,6 +95,10 @@
 
     &.size-small {
         width: 20rem;
+
+        .post-title {
+            max-width: 30ch;
+        }
     }
     
 
