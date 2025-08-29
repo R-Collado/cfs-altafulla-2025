@@ -16,6 +16,14 @@
             object-fit: contain;
             width: 1.5rem;
         }
+
+        @media (max-width: 550px) {
+            font-size: .75rem;
+
+            .language-icon {
+                width: 1.25rem;
+            }
+        }
     }
 
     .language-list {
