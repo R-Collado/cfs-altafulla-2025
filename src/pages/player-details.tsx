@@ -91,6 +91,21 @@ export const PlayerDetailsPage = () => {
 			);
 
 			tl.fromTo(
+				'.player-stats',
+				{
+					opacity: 0,
+					yPercent: 10,
+				},
+				{
+					opacity: 1,
+					yPercent: 0,
+					duration: 0.5,
+					delay: 0.35,
+				},
+				'1',
+			);
+
+			tl.fromTo(
 				'.player-bio',
 				{
 					opacity: 0,
