@@ -14,7 +14,7 @@ export const PlayerCardStats = ({ player }: { player: FieldPlayer }) => {
 			</section>
 			<section className="stat per-match">
 				<p className="stat-name | uppercase">{t('players.stats.assists')}</p>
-				<p className="stat-value">1</p>
+				<p className="stat-value">{player.seasonStats.assists}</p>
 			</section>
 		</>
 	);
