@@ -76,5 +76,15 @@
 		"minute_plural": "{{count}} minutos",
 		"second": "{{count}} segundo",
 		"second_plural": "{{count}} segundos"
+	},
+	"contact": {
+		"title": "¿Tienes alguna pregunta?",
+		"contactUs": "Contáctanos",
+		"firstName": "Nombre",
+		"lastName": "Apellido",
+		"email": "Email",
+		"message": "Mensaje",
+		"successMessage": "¡Tu mensaje ha sido enviado con éxito!",
+		"errorMessage": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
 	}
 }
