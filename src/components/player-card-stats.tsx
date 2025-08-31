@@ -6,15 +6,15 @@ export const PlayerCardStats = ({ player }: { player: FieldPlayer }) => {
 		<>
 			<section className="stat matches">
 				<p className="stat-name | uppercase">{t('players.stats.matches')}</p>
-				<p className="stat-value">{player.seasonStats.matches}</p>
+				<p className="stat-value">{player.totalStats.matches}</p>
 			</section>
 			<section className="stat goals-assists">
 				<p className="stat-name | uppercase">{t('players.stats.goals')}</p>
-				<p className="stat-value">{player.seasonStats.goals}</p>
+				<p className="stat-value">{player.totalStats.goals}</p>
 			</section>
 			<section className="stat per-match">
 				<p className="stat-name | uppercase">{t('players.stats.assists')}</p>
-				<p className="stat-value">{player.seasonStats.assists}</p>
+				<p className="stat-value">{player.totalStats.assists}</p>
 			</section>
 		</>
 	);

@@ -48,12 +48,12 @@ const sortPlayersByStats = (players: any) => {
 		const isKeeperB = b.role === 'keeper';
 
 		const aScore = isKeeperA
-			? a.seasonStats.saves * savesWeight + a.seasonStats.cleanSheets / a.seasonStats.matches
-			: a.seasonStats.goals * goalsWeight + (a.seasonStats.assists * assistsWeight) / a.seasonStats.matches;
+			? a.totalStats.saves * savesWeight + a.totalStats.cleanSheets / a.totalStats.matches
+			: a.totalStats.goals * goalsWeight + (a.totalStats.assists * assistsWeight) / a.totalStats.matches;
 
 		const bScore = isKeeperB
-			? b.seasonStats.saves * savesWeight + b.seasonStats.cleanSheets / b.seasonStats.matches
-			: b.seasonStats.goals * goalsWeight + (b.seasonStats.assists * assistsWeight) / b.seasonStats.matches;
+			? b.totalStats.saves * savesWeight + b.totalStats.cleanSheets / b.totalStats.matches
+			: b.totalStats.goals * goalsWeight + (b.totalStats.assists * assistsWeight) / b.totalStats.matches;
 
 		// if (aScore === bScore || Number.isNaN(aScore) || Number.isNaN(bScore)) {
 		// 	return a.number - b.number; // Ascending order by number if scores are equal
