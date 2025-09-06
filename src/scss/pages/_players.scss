@@ -21,11 +21,11 @@
         }
 
         .players-list {
-            display: grid;
-            gap: 0;
-            gap: 1rem;
-            grid-template-columns: repeat(3, minmax(15rem, 1fr));
-            margin-inline: auto;
+                display: grid;
+                gap: 0;
+                gap: 1rem;
+                grid-template-columns: repeat(3, minmax(15rem, 1fr));
+                margin-inline: auto;
 
             .player-link {
                 width: 100%;
@@ -44,4 +44,27 @@
             }
         }
     }  
+}
+
+
+
+.staff-list {
+    margin-block: 4rem;
+    margin-inline: 5rem;
+
+    .staff-grid {
+        display: grid;
+        gap: 0;
+        gap: 1rem;
+        grid-template-columns: repeat(3, minmax(15rem, 1fr));
+        margin-inline: auto;
+
+        @media (max-width: 900px) {
+            grid-template-columns: repeat(2, minmax(15rem, 1fr));
+        }
+
+        @media (max-width: 660px) {
+            grid-template-columns: repeat(1, minmax(15rem, 1fr));
+        }
+    }
 }

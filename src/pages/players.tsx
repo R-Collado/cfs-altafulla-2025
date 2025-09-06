@@ -5,17 +5,20 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { API_BASE_URL } from '@/utils/utilities/config';
+import { StaffCard } from '@/components/staff-card';
 
 const availableRoles = ['keeper', 'defender', 'winger', 'pivot'] as const;
 
 export const PlayersPage = () => {
 	const { t } = useTranslation();
 	const [players, setPlayers] = useState<FieldPlayer[] | Keeper[]>([]);
+	const [staff, setStaff] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const overlayRef = useRef<HTMLDivElement>(null);
 	const teamId = getTeamByUrl(window.location.href);
 
 	const teamUrl = `${API_BASE_URL}/teams/${teamId}/players`;
+	const staffUrl = `${API_BASE_URL}/staff`;
 
 	useEffect(() => {
 		fetch(teamUrl)
@@ -23,6 +26,13 @@ export const PlayersPage = () => {
 			.then((data) => {
 				setPlayers(data);
 				setLoading(false);
+			});
+
+		fetch(staffUrl)
+			.then((res) => res.json()) // ← return the parsed JSON
+			.then((data) => {
+				setStaff(data);
+				console.log(data);
 			});
 	}, []);
 
@@ -68,6 +78,13 @@ export const PlayersPage = () => {
 					</div>
 				);
 			})}
+			<div className="staff-list">
+				<div className="staff-grid">
+					{staff.map((member, idx) => {
+						return <StaffCard key={idx} member={member} />;
+					})}
+				</div>
+			</div>
 		</section>
 	);
 };
