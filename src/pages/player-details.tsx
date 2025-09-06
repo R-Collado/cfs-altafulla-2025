@@ -49,12 +49,10 @@ export const PlayerDetailsPage = () => {
 				{
 					opacity: 0,
 					yPercent: 10,
-					xPercent: -50,
 				},
 				{
 					opacity: 1,
 					yPercent: 0,
-					xPercent: -50,
 					duration: 1,
 					delay: 0.25,
 				},
