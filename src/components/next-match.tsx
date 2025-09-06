@@ -7,12 +7,12 @@ export const NextMatch = () => {
 	const { t } = useTranslation();
 
 	const dummymatch = {
-		date: DateTime.local(2025, 7, 25, 16, 0),
-		type: 'friendly',
-		rival: 'FC Barcelona',
+		date: DateTime.local(2025, 9, 25, 16, 0, { zone: 'Europe/Madrid' }),
+		type: 'cup',
+		rival: 'Sant Just',
 		goals: {
-			altafulla: 2,
-			rival: 3,
+			altafulla: 0,
+			rival: 0,
 		},
 		isAtHome: true,
 	} as const;

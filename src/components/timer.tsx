@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const targetDate = new Date('August 20, 2025 03:24:00');
+const targetDate = new Date('September 7, 2025 03:00:00');
 
 export const Timer = () => {
 	const timerRef = useRef<HTMLParagraphElement>(null);
