@@ -16,7 +16,7 @@ function App() {
 	// 	console.log(e);
 	// });
 	return (
-		<Suspense fallback={<div>hello world</div>}>
+		<Suspense fallback={<div></div>}>
 			<PrimaryHeader />
 			<Outlet />
 		</Suspense>
