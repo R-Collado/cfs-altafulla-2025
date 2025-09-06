@@ -48,6 +48,11 @@
 			"birthdate": "Fecha de nacimiento",
 			"birthplace": "Lugar de nacimiento",
 			"nationality": "Nacionalidad"
+		},
+		"staff": {
+			"coach": "Entrenador",
+			"analyst": "Analista",
+			"delegate": "Delegado"
 		}
 	},
 	"matches": {
