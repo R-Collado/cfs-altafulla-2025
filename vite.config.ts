@@ -121,7 +121,7 @@ export function i18nHotReload(): PluginOption {
 		name: 'i18n-hot-reload',
 		handleHotUpdate({ file, server }) {
 			if (file.includes('translations') && file.endsWith('.json')) {
-				console.log('[vite-plugin-i18n-hot-reload] Locale file updated');
+				// console.log('[vite-plugin-i18n-hot-reload] Locale file updated');
 				server.ws.send({
 					type: 'custom',
 					event: 'locales-update',
