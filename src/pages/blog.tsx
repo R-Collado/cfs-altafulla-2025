@@ -19,7 +19,11 @@ export const BlogPage = () => {
 		fetch(postsUrl)
 			.then((res) => res.json())
 			.then((data) => {
-				setPosts(data.posts);
+				const sortedPosts = data.posts.sort((a: Post, b: Post) => {
+					return new Date(b.date).getTime() - new Date(a.date).getTime();
+				});
+
+				setPosts(sortedPosts);
 				setLoading(false);
 			});
 	}, []);
@@ -45,7 +49,6 @@ export const BlogPage = () => {
 				{posts.length === 0 ? (
 					<p>No posts available.</p>
 				) : (
-					// posts.map((post: Post) => <p key={post.id}>{post.translations[lang].title}</p>)
 					posts.map((post: Post) => <PostPreview key={post.id} post={post} type="large" />)
 				)}
 			</section>
