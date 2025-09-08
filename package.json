@@ -104,6 +104,7 @@
 	},
 	"dependencies": {
 		"cmdk": "0.2.0",
+		"dayjs": "^1.11.18",
 		"dotenv": "^16.4.4",
 		"gsap": "^3.13.0",
 		"html-react-parser": "4.2.2",
