@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { MatchTeam } from './match-team';
 import { MatchInterface } from '@/types/match';
+import dayjs from 'dayjs';
+import i18n from '@/18n';
 
 interface MatchProps {
 	match: MatchInterface;
@@ -10,6 +12,11 @@ interface MatchProps {
 export const Match = ({ match, isNext }: MatchProps) => {
 	const { t } = useTranslation();
 	const { date, type, rival, goals, isAtHome } = match;
+
+	// not pretty, should change the date to be a dayjs object directly
+	dayjs.locale(i18n.language);
+	const matchDate = dayjs(date.toFormat('yyyy-MM-dd'));
+	const month = matchDate.format('MMM').slice(0, 3);
 
 	const openLink = () => {
 		window.open(
@@ -21,9 +28,9 @@ export const Match = ({ match, isNext }: MatchProps) => {
 	// Get type "past-match" or "future-match" based on the date. And add it to the className or as data-value to change style.
 	return (
 		<article className="match | flex">
-			<p className="match__date | flex flex-col">
+			<p className="match__date | flex flex-col align-center">
 				<span className="match__date__day">{date.day}</span>
-				<span className="match__date__month">{date.toFormat('MMM')}</span>
+				<span className="match__date__month">{month}</span>
 			</p>
 			<div className="match__info | flex flex-col">
 				<h4 className="match__info__header | uppercase">
