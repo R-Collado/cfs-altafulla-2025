@@ -22,7 +22,6 @@ export const Timer = () => {
 	}, []);
 
 	const matchDay = dayjs(nextMatch?.date + ' ' + nextMatch?.time);
-	console.log(matchDay, nextMatch?.rival);
 
 	return (
 		<div className="next-match-timer | text-left">
