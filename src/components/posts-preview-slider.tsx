@@ -15,7 +15,10 @@ export const PostsPreviewSlider = () => {
 		fetch(postsUrl)
 			.then((res) => res.json())
 			.then((data) => {
-				setPosts(data.posts);
+				const sortedPosts = data.posts.sort((a: Post, b: Post) => {
+					return new Date(b.date).getTime() - new Date(a.date).getTime();
+				});
+				setPosts(sortedPosts);
 				setLoading(false);
 			});
 	}, []);
