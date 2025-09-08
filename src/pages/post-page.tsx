@@ -1,7 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import dummyImage1 from '@images/dummy-post-1.png';
+import dummyImage1 from '@images/dummy-picture.webp';
 
 import ParagraphBlock from '@/utils/utilities/text';
 import { useTranslation } from 'react-i18next';
