@@ -5,6 +5,7 @@ import { truncateText } from '@/utils/utilities/text';
 import { Post } from '@/types/post';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
+import dayjs from 'dayjs';
 
 export interface PostPreviewProps {
 	post: Post;
@@ -16,6 +17,7 @@ export const PostPreview = ({ post, type }: PostPreviewProps) => {
 	const lang = i18n.language as 'en' | 'ca' | 'es'; // Adjust based on your supported languages
 
 	const { translations, date, image, tag } = post; // Assuming 'en' is the default language
+	const formattedDate = dayjs(date).format('DD MMMM YYYY');
 
 	return (
 		<article className="post-preview | max-w-fit " data-type={type}>
@@ -25,7 +27,7 @@ export const PostPreview = ({ post, type }: PostPreviewProps) => {
 				</div>
 				<div className="post-info | flex space-between">
 					<PostTag tag={tag[lang]} />
-					<p className="post-date">{formatBlogPostDate(date)}</p>
+					<p className="post-date">{formattedDate}</p>
 				</div>
 				<h2 className="post-title | uppercase text-left">{translations[lang].title}</h2>
 				<p className="post-excerpt | text-left">{truncateText(translations[lang].bodyTop, 100)}</p>

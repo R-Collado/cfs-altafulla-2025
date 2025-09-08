@@ -14,7 +14,7 @@
     &[data-type="large"] {
         $max-width: 28.125rem;
         max-width: $max-width;
-        
+
         .post-title {
             max-width: $max-width;
         }
@@ -34,7 +34,11 @@
         overflow: hidden;
 
         .post-img {
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            object-position: center;
             transition:  transform .2s ease-in-out;
+
 
             &:hover {
                 transform: scale(1.15);
@@ -110,7 +114,7 @@
 
         .post-img {
             filter: brightness(0.8);
-            height: 100%;
+            height: 3rem;
             object-fit: cover;
             object-position: center;
             transition: filter .25s ease-in;
