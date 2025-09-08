@@ -17,7 +17,9 @@ export const PostPreview = ({ post, type }: PostPreviewProps) => {
 	const lang = i18n.language as 'en' | 'ca' | 'es'; // Adjust based on your supported languages
 
 	const { translations, date, image, tag } = post; // Assuming 'en' is the default language
-	const formattedDate = dayjs(date).format('DD MMMM YYYY');
+	dayjs.locale(lang);
+	const formattedMonth = dayjs(date).format('MMMM').charAt(0).toUpperCase() + dayjs(date).format('MMMM').slice(1);
+	const formattedDate = dayjs(date).format('DD') + ' ' + formattedMonth + ' ' + dayjs(date).format('YYYY');
 
 	return (
 		<article className="post-preview | max-w-fit " data-type={type}>
