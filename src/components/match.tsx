@@ -16,7 +16,7 @@ export const Match = ({ match, isNext }: MatchProps) => {
 	// not pretty, should change the date to be a dayjs object directly
 	dayjs.locale(i18n.language);
 	const matchDate = dayjs(date.toFormat('yyyy-MM-dd'));
-	const month = matchDate.format('MMM').slice(0, 3);
+	const month = matchDate.format('MMM').slice(0, 3).charAt(0).toUpperCase() + matchDate.format('MMM').slice(1, 3);
 
 	const openLink = () => {
 		window.open(
