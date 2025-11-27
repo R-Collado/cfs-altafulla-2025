@@ -19,7 +19,7 @@ export const PrimaryNav = () => {
 				<Link to="/contact">{t('common.nav.contact')}</Link>
 			</li>
 			<li>
-				<Link to="#">{t('common.nav.partners')}</Link>
+				<Link to="/partners">{t('common.nav.partners')}</Link>
 			</li>
 		</nav>
 	);
