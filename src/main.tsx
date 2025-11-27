@@ -29,7 +29,7 @@ const router = createBrowserRouter([
 			{ path: '/blog', element: <BlogPage /> },
 			{ path: 'blog/:postId', element: <PostPage /> },
 			{ path: '/contact', element: <ContactPage /> },
-			{ path: '/sponsors', element: <PartnersPage /> },
+			{ path: '/partners', element: <PartnersPage /> },
 		],
 	},
 ]);
