@@ -69,28 +69,3 @@ export const PartnersPage = () => {
 		</section>
 	);
 };
-
-const mainSponsors = ['ilusion', 'donquijote'];
-
-const sponsors = [
-	'altafun',
-	'altalegal',
-	'apolo',
-	'bruixot',
-	'correa',
-	'ferreteriacasas',
-	'finquesllevant',
-	'fornnogues',
-	'laramona',
-	'leonmechanics',
-	'llenyesgaia',
-	'lolabistro',
-	'perruqueriacarme',
-	'pinturassanchez',
-	'qip',
-	'siosi',
-	'superlluna',
-	'tmax',
-	'tratoria',
-	'voramar',
-];
