@@ -13,6 +13,7 @@ import { TeamsPage } from './pages/teams.tsx';
 import { PostPage } from './pages/post-page.tsx';
 import { PlayerDetailsPage } from './pages/player-details.tsx';
 import { ContactPage } from './pages/contact.tsx';
+import { PartnersPage } from './pages/sponsors.tsx';
 
 const router = createBrowserRouter([
 	{
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
 			{ path: '/blog', element: <BlogPage /> },
 			{ path: 'blog/:postId', element: <PostPage /> },
 			{ path: '/contact', element: <ContactPage /> },
+			{ path: '/sponsors', element: <PartnersPage /> },
 		],
 	},
 ]);

@@ -3,9 +3,7 @@ interface PostTagProps {
 }
 
 export const PostTag = ({ tag }: PostTagProps) => {
-	const onTagClick = () => {
-		console.log('tag clicked');
-	};
+	const onTagClick = () => {};
 
 	return (
 		<button className="post-tag | uppercase br-pill pointer" onClick={onTagClick}>

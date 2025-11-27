@@ -1,0 +1,60 @@
+@use '../abstracts/' as *;
+
+.partners {
+    padding-bottom: 5rem;
+    padding-inline: 2rem;
+
+     .overlay {
+        background-color: $color-neutral-900;
+        height: 100vh;
+        position: absolute;
+        width: 100vw;
+        z-index: 500;
+    }
+
+    
+    .main-partners {
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 5rem;
+
+        & img {
+            max-width: 50%;
+            object-fit: contain;
+        }
+
+        @media (min-width: 1024px) {
+
+            & img {
+                width: 25rem;
+            }
+        }
+    }
+
+    .other-partners {
+        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 auto;
+        object-fit: fill;
+        place-items: center;
+
+        @media (min-width: 768px) {
+            gap: 3rem;
+            max-width: 80%;
+        }
+
+        @media (min-width: 1024px) {
+            gap: 5rem;
+            grid-template-columns: repeat(4, 1fr);
+
+            & img {
+                max-height: 10rem;
+                // width: 1rem;
+            }
+        }
+
+    }
+
+
+
+}
